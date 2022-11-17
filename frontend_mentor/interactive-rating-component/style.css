@@ -1,0 +1,159 @@
+/*
+Name: Peter Jungers
+Date: 11/13/22
+Exercise: Frontend Mentor Interactive rating component
+*/
+
+
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+
+
+/* CSS reset */
+body, main, footer, section, div, h2, p, ul, li, a {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+    background-color: hsl(216, 12%, 8%);
+    color: hsl(217, 12%, 63%);
+    font-size: 15px;
+    font-family: "Overpass", sans-serif;
+    font-weight: 400;
+}
+
+a {
+    text-decoration: none;
+}
+
+footer {
+    margin-bottom: 20px;
+}
+
+.rating {
+    display: block;
+    padding: 28px 28px 34px;
+}
+
+.thank-you {
+    display: none;
+    padding: 38px 28px 42px;
+}
+
+.rating,
+.thank-you {
+    background-image: linear-gradient(
+            hsl(213, 19%, 18%),
+            hsla(213, 19%, 18%, .5)
+    );
+    border-radius: 15px;
+    margin: 20px 0 23px;
+}
+
+.rating h2,
+.thank-you h2 {
+    font-weight: 700;
+    font-size: 1.65em;
+    color: hsl(0, 0%, 100%);
+    margin: 22px 0 13px;
+}
+
+.rating p,
+.thank-you p {
+    line-height: 1.5em;
+}
+
+.thank-you p,
+.thank-you h2 {
+    text-align: center;
+}
+
+.rating ul {
+    padding: 0;
+}
+
+.circle-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, max-content));
+    column-gap: 18px;
+    margin: 29px 0 25px;
+}
+
+.circle, .circle-star {
+    display: grid;
+    place-content: center;
+    background-color: hsla(0, 0%, 100%, .06);
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+}
+
+.circle:hover {
+    background-color: hsl(25, 97%, 53%);
+    color: hsl(0, 0%, 100%);
+}
+
+/*.circle:active {*/
+/*    background-color: hsl(216, 12%, 54%);*/
+/*}*/
+
+.submit-button {
+    display: grid;
+    place-content: center;
+    background-color: hsl(25, 97%, 53%);
+    font-weight: 700;
+    letter-spacing: .2em;
+    color: hsl(0, 0%, 100%);
+    width: 100%;
+    height: 46px;
+    border-radius: 23px;
+    border: none;
+}
+
+.submit-button:hover {
+    background-color: hsl(0, 0%, 100%);
+    color: hsl(25, 97%, 53%);
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(25, 97%, 53%);
+}
+
+#container {
+    width: 87%;
+    max-width: 410px;
+    margin: auto;
+}
+
+#thank-you-image {
+    width: 162px;
+    margin: 0 auto;
+}
+
+#message {
+    background-color: hsla(0, 0%, 100%, .06);
+    color: hsl(25, 97%, 53%);
+    width: 70%;
+    height: 36px;
+    border-radius: 18px;
+    margin: 22px auto 30px;
+}
+
+#message p {
+    line-height: 39px;
+}
+
+@media screen and (max-width: 409px){
+    #circle-grid {
+        column-gap: 10px;
+    }
+}
