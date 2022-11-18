@@ -1,7 +1,7 @@
 /*
 Name: Peter Jungers
 Date: 11/13/22
-Exercise: Frontend Mentor Interactive rating component
+Exercise: Frontend Mentor: Interactive rating component
 */
 
 
@@ -13,6 +13,10 @@ body, main, footer, section, div, h2, p, ul, li, a {
     margin: 0;
     padding: 0;
     border: 0;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 body {
@@ -41,7 +45,7 @@ footer {
 
 .thank-you {
     display: none;
-    padding: 38px 28px 42px;
+    padding: 36px 28px 39px;
 }
 
 .rating,
@@ -92,14 +96,14 @@ footer {
     border-radius: 50%;
 }
 
+.circle-grid {
+    cursor: pointer;
+}
+
 .circle:hover {
     background-color: hsl(25, 97%, 53%);
     color: hsl(0, 0%, 100%);
 }
-
-/*.circle:active {*/
-/*    background-color: hsl(216, 12%, 54%);*/
-/*}*/
 
 .submit-button {
     display: grid;
@@ -112,6 +116,7 @@ footer {
     height: 46px;
     border-radius: 23px;
     border: none;
+    cursor: pointer;
 }
 
 .submit-button:hover {
@@ -125,7 +130,12 @@ footer {
 }
 
 .attribution a {
+    text-decoration: underline;
     color: hsl(25, 97%, 53%);
+}
+
+.attribution a:hover {
+    text-decoration: none;
 }
 
 #container {
@@ -152,8 +162,39 @@ footer {
     line-height: 39px;
 }
 
-@media screen and (max-width: 409px){
+#reset {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+}
+
+#reset p {
+    text-decoration: underline;
+    color: hsla(217, 12%, 63%, .35);
+    font-size: 11px;
+    text-align: center;
+    width: max-content;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+#reset p:hover {
+    text-decoration: none;
+    color: hsla(217, 12%, 63%);
+}
+
+@media screen and (max-width: 409px) {
     #circle-grid {
         column-gap: 10px;
+    }
+
+    .rating,
+    .thank-you {
+        height: 410px;
+    }
+
+    .thank-you {
+        padding: 45px 28px 0;
     }
 }
