@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--
+Name: Peter Jungers
+Date: 11/13/22
+Exercise: Frontend Mentor: Interactive rating component
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Frontend Mentor | Interactive rating component</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="container">
+    <main>
+      <!-- Rating state start -->
+      <section class="rating">
+        <div class="circle-star">
+          <img src="images/icon-star.svg" alt="Illustration of a star">
+        </div>
+        <h2>How did we do?</h2>
+        <p>
+          Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!
+        </p>
+          <ul class="circle-grid">
+            <li class="circle">1</li>
+            <li class="circle">2</li>
+            <li class="circle">3</li>
+            <li class="circle">4</li>
+            <li class="circle">5</li>
+          </ul>
+          <button type="submit" class="submit-button">SUBMIT</button>
+      </section>
+      <!-- Rating state end -->
+
+      <!-- Thank you state start -->
+      <section class="thank-you">
+        <div id="thank-you-image">
+          <img src="images/illustration-thank-you.svg" alt="Illustration of stylized mobile phone">
+        </div>
+        <div id="message">
+          <p></p>
+        </div>
+        <h2>Thank you!</h2>
+        <p>
+          We appreciate you taking the time to give a rating. If you ever need more support,
+          don’t hesitate to get in touch!
+        </p>
+      </section>
+      <!-- Thank you state end -->
+    </main>
+
+    <footer class="attribution">
+      <p>Challenge by <a href="https://www.frontendmentor.io/challenges/interactive-rating-component-koxpeBUmI" target="_blank">Frontend Mentor</a> &#9679; Coded by <a href="https://github.com/peterjungers/peterjungers.github.io/tree/main/frontend_mentor/interactive-rating-component" target="_blank">Peter Jungers</a></p>
+    </footer>
+  </div>
+  <div id="reset"><p>Reset</p></div>
+  <script src="script.js"></script>
+</body>
+</html>
