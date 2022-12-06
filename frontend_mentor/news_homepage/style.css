@@ -5,13 +5,16 @@ Exercise: Frontend Mentor: News homepage
 */
 
 
-/* CSS reset */
-html, body, main, footer, section, div, h1, h2, h3, p, a, img, ul, li, button {
+/* || CSS RESET */
+html, body, header, main, footer, section, div, h1, h2, h3, p, a, img, ul, li, button {
     margin: 0;
     padding: 0;
     border: 0;
 }
 
+
+/* || Default styles are for narrow screens */
+/* || GENERAL STYLES: Default */
 :root {
     --soft-orange: hsl(35, 77%, 62%);
     --soft-red: hsl(5, 85%, 63%);
@@ -30,6 +33,21 @@ body {
     font-family: Inter, Arial, sans-serif;
 }
 
+header {
+    margin: 30px 0;
+}
+
+main {
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    gap: 60px;
+    margin-bottom: 60px;
+}
+
+footer {
+    margin-bottom: 30px;
+}
+
 p {
     color: var(--dark-gray-blue);
     font-size: 15px;
@@ -37,16 +55,23 @@ p {
     line-height: 1.75em;
 }
 
-header {
-    margin: 30px 0;
+ul {
+    list-style-type: none;
 }
 
-footer {
-    margin-bottom: 30px;
+a {
+    text-decoration: none;
 }
 
-.margin-bottom {
-    margin-bottom: 60px;
+img {
+    width: 100%;
+}
+
+
+/* || UTILITIES: Default */
+.tab-desk-nav,
+.hero-horizontal {
+    display: none;
 }
 
 .btn {
@@ -65,28 +90,82 @@ footer {
     text-align: center;
 }
 
+
+/* || SITEWIDE: Default */
+#container {
+    padding: 0 15px;
+}
+
+/* Logo and hamburger icon */
+.logo {
+    width: 65px;
+    height: 40px;
+}
+
+#logo-hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#hamburger-icon {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.hamburger-line {
+    background-color: black;
+    width: 100%;
+    height: 3px;
+}
+
+.hamburger-line::before {
+    content: "";
+    position: absolute;
+    background-color: black;
+    width: 100%;
+    height: 3px;
+    transform: translateY(-10px);
+}
+
+.hamburger-line::after {
+    content: "";
+    position: absolute;
+    background-color: black;
+    width: 100%;
+    height: 3px;
+    transform: translateY(10px);
+}
+
 /* Mobile nav menu */
 .mobile-nav {
     height: 0;
     overflow: hidden;
-    transition: 0.75s;
+    transition: height 0.75s;
 }
 
 .mobile-nav.active {
-    height: 220px;
+    height: 255px; /* Height of all li elements plus top borders */
     overflow: visible;
 }
 
 .mobile-nav ul {
-    list-style-type: none;
     margin-top: 30px;
 }
 
 .mobile-nav li {
-    background-color: var(--soft-orange);
-    height: 44px;
-    line-height: 44px;
+    border-top: 1px solid var(--gray-blue);
+    height: 50px;
+    line-height: 50px;
     text-align: right;
+}
+
+.mobile-nav li:active {
+    background-color: var(--gray-blue);
 }
 
 .mobile-nav a {
@@ -98,38 +177,33 @@ footer {
     padding-right: 10px;
 }
 
-.mobile-nav li:active {
-    background-color: var(--soft-red);
+/* Attribution */
+.attribution {
+    font-size: 11px;
+    color: var(--dark-gray-blue);
+    text-align: center;
 }
 
-.tablet-desktop-nav {
-    display: none;
+.attribution a {
+    color: var(--soft-orange);
 }
-/* End mobile nav menu */
 
-/* Styles for intro div */
+
+/* || INTRO SECTION: Default */
+.intro {
+    display: grid;
+    grid-template-rows: repeat(4, auto);
+    gap: 20px;
+}
+
 .intro h1 {
     font-weight: 800;
     font-size: 2.75em;
-    line-height: 1.1em;
-    margin-bottom: 20px;
+    line-height: 1.05em;
 }
 
-.intro p {
-    margin-bottom: 20px;
-}
 
-.hero {
-    width: 100%;
-    margin-bottom: 20px;
-}
-
-.hero-mobile {
-    display: block;
-}
-/* End styles for intro div */
-
-/* Styles for div with list content */
+/* || SECTION USING LIST: Default */
 .list-box {
     background-color: var(--very-dark-blue);
     padding: 25px 20px 0;
@@ -165,67 +239,231 @@ footer {
 .list-box li:last-child {
     border-bottom: none;
 }
-/* End styles for div with list content */
 
-/* Styles for div with gridded content */
+.list-box li a {
+    color: var(--off-white);
+}
+
+
+/* || SECTION USING GRID: Default */
 .grid-box {
     display: grid;
     grid-template-rows: repeat(3, 1fr);
     gap: 35px;
 }
 
+/* .grid-cell is each img/text pair within .grid-box */
 .grid-cell {
     display: flex;
     column-gap: 23px;
 }
 
-.grid-box-img {
+.grid-cell-img {
     width: 100px;
+    height: 127px;
 }
 
 .grid-cell h2 {
     font-size: 2em;
+    line-height: 1em;
     color: var(--gray-blue);
     margin-bottom: .4em;
 }
 
 .grid-cell h3 {
-    margin-bottom: .5em;
-}
-/* End styles for div with gridded content */
-
-/* Styles for credits */
-.attribution {
-    font-size: 11px;
-    color: var(--dark-gray-blue);
-    text-align: center;
+    font-size: 1.15em;
+    margin-bottom: .425em;
 }
 
-.attribution a {
-    color: var(--soft-orange);
+.grid-cell a {
+    color: var(--very-dark-blue);
 }
 
-.attribution a:hover {
-    text-decoration: none;
-}
-/* End styles for credits */
 
-/* id styles */
-#container {
-    padding: 0 15px;
-}
+/* || Horizontal small mobile viewport */
+@media screen and (min-width: 480px) {
+    /* || UTILITIES: Horizontal small mobile viewport */
+    .hero-square {
+        display: none;
+    }
 
-#logo-hamburger {
-    display: flex;
-    justify-content: space-between;
+    .hero-horizontal {
+        display: block;
+    }
 }
 
-#hamburger-icon {
-    width: 40px;
-    height: 40px;
-    background-color: blue;
+
+/* || Vertical tablet viewports */
+@media screen and (min-width: 768px) {
+    /* || GENERAL STYLES: Vertical tablet viewports */
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 50px 0;
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, auto);
+        column-gap: 30px;
+        row-gap: 70px;
+        margin-bottom: 60px;
+    }
+
+
+    /* || UTILITIES: Vertical tablet viewports */
+    #hamburger-icon,
+    .hamburger-line,
+    .mobile-nav,
+    .hero-horizontal {
+        display: none;
+    }
+
+    .tab-desk-nav,
+    .hero-square {
+        display: block;
+    }
+
+    .btn:hover {
+        background-color: var(--very-dark-blue);
+        cursor: pointer;
+    }
+
+
+    /* || SITEWIDE: Vertical tablet viewports */
+    #container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .tab-desk-nav li {
+        display: inline-block;
+        padding: 0 20px;
+    }
+
+    .tab-desk-nav li:last-of-type {
+        padding-right: 0;
+    }
+
+    .tab-desk-nav a {
+        color: var(--dark-gray-blue)
+    }
+
+    .tab-desk-nav a:hover {
+        color: var(--soft-red)
+    }
+
+    .attribution {
+        text-align: right;
+        padding-right: 5px;
+    }
+
+    .attribution a:hover {
+        color: var(--soft-red);
+    }
+
+
+    /* || INTRO SECTION: Vertical tablet viewports */
+    .intro {
+        grid-column: 1 / span 2; /* Placement within main grid */
+        align-self: start; /* Aligned at start within main grid */
+        display: grid; /* Begin styles for .intro grid */
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, auto);
+        gap: 30px;
+    }
+
+    .intro #hero {
+        grid-column: 1 / span 2;
+    }
+
+    .intro h1 {
+        grid-column: 1 / span 2;
+        grid-row: 2;
+        font-size: 3.6em;
+    }
+
+    .intro p {
+        grid-column: 1 / span 2;
+        grid-row: 3;
+    }
+
+    .intro .btn {
+        grid-column: 1;
+    }
+
+
+    /* || SECTION USING LIST: Vertical tablet viewports */
+    .list-box {
+        padding: 31px 27px 0;
+    }
+
+    .list-box h2 {
+        font-size: 2.5em;
+    }
+
+    .list-box li a:hover {
+        color: var(--soft-orange);
+    }
+
+
+    /* || SECTION USING GRID: Vertical tablet viewports */
+    .grid-box {
+        grid-column: 1 / span 3; /* Placement within main grid */
+        grid-template-rows: none;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+
+    .grid-cell a:hover {
+        color: var(--soft-red);
+    }
 }
 
-.mobile {
-    /*display: none;*/
+
+/* || Horizontal tablet and small desktop viewports */
+@media screen and (min-width: 950px) {
+    /* || UTILITIES: Horizontal tablet and small desktop viewports */
+    .hero-square {
+        display: none;
+    }
+
+    .hero-horizontal {
+        display: block;
+    }
+
+
+    /* || INTRO SECTION: Horizontal tablet and small desktop viewports */
+    .intro {
+        grid-template-rows: repeat(3, auto);
+    }
+
+    .intro h1 {
+        grid-column: 1;
+        grid-row: 2 / span 2;
+    }
+
+    .intro p {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .intro .btn {
+        grid-column: 2;
+    }
+}
+
+
+/* || Desktop viewports */
+@media screen and (min-width: 1200px) {
+    /* || INTRO SECTION: Desktop viewports */
+    .intro {
+        align-self: auto;
+    }
+
+    .intro .btn {
+        align-self: end;
+    }
 }

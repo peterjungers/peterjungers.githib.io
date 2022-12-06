@@ -12,8 +12,6 @@ function toggleNavMenu() {
     hamburgerIcon.addEventListener("click", () => {
         navMenu.classList.toggle("active");
     });
-
-
 }
 
 window.addEventListener("load", toggleNavMenu);

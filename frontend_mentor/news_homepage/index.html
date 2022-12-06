@@ -13,20 +13,16 @@ Exercise: Frontend Mentor: News homepage
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="test"></div>
   <div id="container">
     <header>
       <div id="logo-hamburger">
-        <img src="assets/images/logo.svg" alt="Logo is the letter W.">
-        <!-- Mobile nav -->
-        <div id="hamburger-icon" class="mobile">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
+        <img class="logo" src="assets/images/logo.svg" alt="Logo is the letter W.">
+        <div id="hamburger-icon">
+          <div class="hamburger-line"></div>
         </div>
       </div>
-      <nav id="nav-menu" class="mobile mobile-nav">
+      <!-- Mobile nav -->
+      <nav class="mobile-nav">
         <ul>
           <li><a href="#">Home</a></li>
           <li><a href="#">New</a></li>
@@ -36,7 +32,7 @@ Exercise: Frontend Mentor: News homepage
         </ul>
       </nav>
       <!-- Tablet and desktop nav -->
-      <nav class="tablet-desktop-nav">
+      <nav class="tab-desk-nav">
         <ul>
           <li><a href="#">Home</a></li>
           <li><a href="#">New</a></li>
@@ -48,57 +44,60 @@ Exercise: Frontend Mentor: News homepage
     </header>
 
     <main>
-      <section class="intro margin-bottom">
-        <img class="hero hero-mobile" src="assets/images/image-web-3-mobile.jpg" alt="Photograph of multi-colored wooden blocks neatly arranged.">
+      <section class="intro">
+        <div id="hero">
+          <img class="hero-square" src="assets/images/image-web-3-mobile.jpg" alt="Photograph of multi-colored wooden blocks neatly arranged.">
+          <img class="hero-horizontal" src="assets/images/image-web-3-desktop.jpg">
+        </div>
         <h1>The Bright Future of Web 3.0?</h1>
         <p>
           We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. But is it really fulfilling its promise?
         </p>
-        <div class="btn">
+        <a class="btn" href="#">
           <p>Read More</p>
-        </div>
+        </a>
       </section>
 
-      <section class="list-box margin-bottom">
+      <section class="list-box">
         <h2>New</h2>
         <ul>
           <li>
-            <h3>Hydrogen VS Electric Cars</h3>
+            <h3><a href="#">Hydrogen VS Electric Cars</a></h3>
             <p>Will hydrogen-fueled cars ever catch up to EVs?</p>
           </li>
           <li>
-            <h3>The Downsides of AI Artistry</h3>
+            <h3><a href="#">The Downsides of AI Artistry</a></h3>
             <p>What are the possible adverse effects of on-demand AI image generation?</p>
           </li>
           <li>
-            <h3>Is VC Funding Drying Up?</h3>
+            <h3><a href="#">Is VC Funding Drying Up?</a></h3>
             <p>Private funding by VC firms is down 50% YOY. We take a look at what that means.</p>
           </li>
         </ul>
       </section>
 
-      <section class="grid-box margin-bottom">
+      <section class="grid-box">
         <div class="grid-cell">
-          <img src="assets/images/image-retro-pcs.jpg" alt="Photograph of a tiny retro PC." class="grid-box-img">
+          <img class="grid-cell-img" src="assets/images/image-retro-pcs.jpg" alt="Photograph of a tiny retro PC.">
           <div>
             <h2>01</h2>
-            <h3>Reviving Retro PCs</h3>
+            <h3><a href="#">Reviving Retro PCs</a></h3>
             <p>What happens when old PCs are given modern upgrades?</p>
           </div>
         </div>
         <div class="grid-cell">
-          <img src="assets/images/image-top-laptops.jpg" alt="Photograph of keys on a computer keyboard." class="grid-box-img">
+          <img class="grid-cell-img" src="assets/images/image-top-laptops.jpg" alt="Photograph of keys on a computer keyboard.">
           <div>
             <h2>02</h2>
-            <h3>Top 10 Laptops of 2023</h3>
+            <h3><a href="#">Top 10 Laptops of 2023</a></h3>
             <p>Our best picks for various needs and budgets.</p>
           </div>
         </div>
         <div class="grid-cell">
-          <img src="assets/images/image-gaming-growth.jpg" alt="Photograph of a video game controller in the air above an open hand." class="grid-box-img">
+          <img class="grid-cell-img" src="assets/images/image-gaming-growth.jpg" alt="Photograph of a video game controller in the air above an open hand.">
           <div>
             <h2>03</h2>
-            <h3>The Growth of Gaming</h3>
+            <h3><a href="#">The Growth of Gaming</a></h3>
             <p>How the pandemic has sparked fresh opportunities.</p>
           </div>
         </div>
@@ -107,7 +106,7 @@ Exercise: Frontend Mentor: News homepage
 
     <footer class="attribution">
       Challenge by <a href="https://www.frontendmentor.io/challenges/news-homepage-H6SWTa1MFl" target="_blank">Frontend Mentor</a>
-      / Coded by <a href="https://github.com/peterjungers/peterjungers.github.io/tree/main/frontend_mentor/news-homepage" target="_blank">Peter Jungers</a>
+      / Coded by <a href="https://github.com/peterjungers/peterjungers.github.io/tree/main/frontend_mentor/news_homepage" target="_blank">Peter Jungers</a>
     </footer>
   </div>
   <script src="script.js"></script>
