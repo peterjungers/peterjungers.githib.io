@@ -81,11 +81,11 @@ img {
 }
 
 .btn p {
+    color: var(--off-white);
     font-size: 13px;
     font-weight: 700;
     letter-spacing: .3em;
     line-height: 50px;
-    color: var(--off-white);
     text-transform: uppercase;
     text-align: center;
 }
@@ -170,17 +170,17 @@ img {
 
 .mobile-nav a {
     display: block;
-    text-decoration: none;
+    color: var(--very-dark-blue);
     font-size: 1.5em;
     font-weight: 700;
-    color: black;
+    text-decoration: none;
     padding-right: 10px;
 }
 
 /* Attribution */
 .attribution {
-    font-size: 11px;
     color: var(--dark-gray-blue);
+    font-size: 11px;
     text-align: center;
 }
 
@@ -197,6 +197,7 @@ img {
 }
 
 .intro h1 {
+    color: var(--very-dark-blue);
     font-weight: 800;
     font-size: 2.75em;
     line-height: 1.05em;
@@ -210,20 +211,20 @@ img {
 }
 
 .list-box h2 {
+    color: var(--soft-orange);
     font-size: 2em;
     font-weight: 700;
-    color: var(--soft-orange);
 }
 
 .list-box h3 {
-    font-size: 1.25em;
     color: var(--off-white);
+    font-size: 1.25em;
     margin-bottom: .5em;
 }
 
 .list-box p {
-    font-weight: 300;
     color: var(--gray-blue);
+    font-weight: 300;
 }
 
 .list-box ul {
@@ -264,9 +265,9 @@ img {
 }
 
 .grid-cell h2 {
+    color: var(--gray-blue);
     font-size: 2em;
     line-height: 1em;
-    color: var(--gray-blue);
     margin-bottom: .4em;
 }
 
