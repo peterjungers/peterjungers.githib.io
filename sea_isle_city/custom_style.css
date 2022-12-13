@@ -68,4 +68,8 @@ a:hover {
     .viewport-sm {
         display: none;
     }
+
+    body {
+        background-color: snow;
+    }
 }
