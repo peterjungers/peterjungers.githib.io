@@ -5,10 +5,10 @@ Exercise: Frontend Mentor: Sunnyside agency landing page
 */
 
 
-@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:opsz,wght@9..144,700;9..144,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:opsz,wght@9..144,700;9..144,800&display=swap');
 
 /* || CSS RESET */
-html, body, header, main, footer, section, div, h1, h2, h3, p, a, img, ul, li, button {
+html, body, header, main, footer, section, div, h1, h2, h3, h4, p, a, img, ul, li, button {
     margin: 0;
     padding: 0;
     border: 0;
@@ -18,16 +18,19 @@ html, body, header, main, footer, section, div, h1, h2, h3, p, a, img, ul, li, b
 :root {
     /* Primary colors */
     --soft-red: hsl(7 99% 70%);
+    --soft-red-alpha-25: hsl(7 99% 70% / .25);
     --yellow: hsl(51 100% 49%);
+    --yellow-alpha-25: hsl(51 100% 49% / .25);
     --dark-desaturated-cyan: hsl(167 40% 24%);  /* "Graphic Design" text */
+    --dark-desaturated-cyan-alpha-70: hsl(167 40% 24% / .7);
     --dark-blue: hsl(198 62% 26%);  /* "Photography" text */
     --dark-moderate-cyan: hsl(168 34% 41%); /* Footer */
     /* Neutral colors */
     --very-dark-blue: hsl(212 27% 19%);
+    --very-dark-blue-alpha-70: hsl(212 27% 19% / .7);
     --very-dark-gray-blue: hsl(213 9% 39%);
     --dark-gray-blue: hsl(232 10% 55%);
     --gray-blue: hsl(210 4% 67%);
-    --test: 0deg 0% 100%;
     --white: hsl(0 0% 100%);
     --white-alpha-25: hsl(0 0% 100% / .25);
 }
@@ -40,7 +43,40 @@ body {
     background-color: var(--white);
     font-family: Barlow, sans-serif;
     font-size: 18px;
-    color: var(--very-dark-gray-blue);
+}
+
+h1, h2, h3, h4 {
+    font-family: Fraunces, sans-serif;
+    font-weight: 800;
+}
+
+h1 {
+    font-size: 3.75vw;
+    text-transform: uppercase;
+    letter-spacing: .65rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+h4 {
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: .3rem;
+}
+
+p {
+    color: var(--dark-gray-blue);
+    line-height: 2rem;
+}
+
+a {
+    text-decoration: none;
 }
 
 img {
@@ -48,6 +84,7 @@ img {
     width: 100%;
     height: auto;
 }
+/* END GENERAL SITEWIDE STYLES */
 
 
 /* || UTILITIES DESKTOP */
@@ -65,7 +102,7 @@ img {
 }
 
 .logo-sunnyside {
-    width: 180px
+    width: 170px
 }
 
 .button {
@@ -85,11 +122,30 @@ img {
 .button:hover {
     background-color: var(--white-alpha-25);
 }
+/* END UTILITIES DESKTOP */
 
 
 /* || HEADER DESKTOP */
 header {
     position: relative;
+}
+
+#header-content {
+    display: flex;
+    justify-content: center;
+}
+
+#header-content h1 {
+    position: absolute;
+    top: 25%;
+    color: var(--white);
+    text-align: center;
+}
+
+#arrow-down {
+    position: absolute;
+    top: 45%;
+    width: 2.5vw;
 }
 
 /* navbar */
@@ -99,11 +155,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 2rem;
-}
-
-#nav-links {
-
+    padding: 2.25rem 2.75rem 0;
 }
 
 #nav-links ul {
@@ -117,9 +169,12 @@ nav {
     margin: 0 1.5rem;
 }
 
+#nav-links li:last-of-type {
+    margin-right: 0;
+}
+
 #nav-links a {
     color: var(--white);
-    text-decoration: none;
 }
 
 #nav-links .button {
@@ -134,10 +189,7 @@ nav {
     color: var(--white);
 }
 /* END navbar */
-
-#header-content {
-    width: 100%;
-}
+/* END HEADER DESKTOP */
 
 
 /* || MAIN GRID DESKTOP */
@@ -146,78 +198,225 @@ nav {
     grid-template-columns: repeat(2, 1fr);
 }
 
-/* #main-grid items: */
+/* Grid item classes: learn-more, learn-more-content */
+.learn-more {
+    display: flex;
+    align-items: center;
+}
+
+.learn-more-content {
+    width: 62%;
+}
+
+.learn-more-content h2 {
+    color: var(--very-dark-blue);
+    margin-bottom: 1.75rem;
+}
+
+.learn-more-content p {
+    margin-bottom: 2.5rem;
+}
+
+.learn-more-content a {
+    position: relative;
+    font-family: Fraunces, sans-serif;
+    font-weight: 800;
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    padding: 0 .5rem;
+}
+
+.learn-more-content a:link,
+.learn-more-content a:visited,
+.learn-more-content a:hover,
+.learn-more-content a:focus,
+.learn-more-content a:active {
+    color: var(--dark-blue);
+}
+
+/*
+Link underline: see #main-grid items section below for
+underline styles specific to grid item
+*/
+.learn-more-content a::before {
+    position: absolute;
+    top: 62%;
+    content: "";
+    width: 100%;
+    height: 10px;
+    margin: 0 1rem 0 -.5rem;
+    border-radius: 5px;
+    z-index: -1;
+}
+/*
+Thanks to https://stackoverflow.com/a/68127409/21046255
+for help with figuring out the above underline.
+*/
+/* END Grid item classes: learn-more, learn-more-content */
+
+
+/*
+#main-grid items with IDs: text-transform, text-stand-out
+(which use learn-more and learn-more-content classes)
+*/
 #text-transform {
     grid-column: 1;
-    width: 100%;
 }
 
-#img-transform {
-    grid-column: 2;
-    width: 100%;
+#text-transform .learn-more-content {
+    margin-left: 22%;
 }
 
-#img-stand-out {
-    grid-column: 1;
-    width: 100%;
+#text-transform .learn-more-content a::before {
+    background-color: var(--yellow-alpha-25);
+}
+
+#text-transform .learn-more-content a:hover::before {
+    background-color: var(--yellow)
 }
 
 #text-stand-out {
     grid-column: 2;
-    width: 100%;
 }
 
+#text-stand-out.learn-more {
+    justify-content: end;
+}
+
+#text-stand-out .learn-more-content {
+    margin-right: 22%;
+}
+
+#text-stand-out .learn-more-content a::before {
+    background-color: var(--soft-red-alpha-25);
+}
+
+#text-stand-out .learn-more-content a:hover::before {
+    background-color: var(--soft-red)
+}
+/* END #main-grid items with IDs: text-transform, text-stand-out */
+
+
+/* Grid item classes: skills, skills-content */
+.skills {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.skills-content {
+    position: absolute;
+    top: 66%;
+    width: 50%;
+    text-align: center;
+}
+
+.skills-content h3 {
+    margin-bottom: 1.5rem;
+}
+
+.skills-content p {
+    font-size: 17px;
+    line-height: 1.75rem;
+}
+/* END Grid item classes: skills, skills-content */
+
+/*
+#main-grid items with IDs: graphic-design, photography
+(which use skills and skills-content classes)
+*/
 #graphic-design {
     grid-column: 1;
-    width: 100%;
+}
+
+#graphic-design .skills-content h3 {
+    color: var(--dark-desaturated-cyan);
+}
+
+#graphic-design .skills-content p {
+    color: var(--dark-desaturated-cyan-alpha-70);
 }
 
 #photography {
     grid-column: 2;
-    width: 100%;
 }
-/* END #main-grid items: */
+
+#photography .skills-content h3 {
+    color: var(--very-dark-blue);
+}
+
+#photography .skills-content p {
+    color: var(--very-dark-blue-alpha-70);
+}
+/* END #main-grid items with IDs: graphic-design, photography */
+
 
 #testimonials-grid {
     grid-column: 1 / span 2;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 50px 1fr;
-    padding: 6rem;
-    width: 100%;
-    height: 300px;
+    column-gap: 2.25rem;
+    padding: 9rem 10rem;
 }
+
+.clients {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.clients img {
+    margin-bottom: 3.25rem;
+}
+
+.clients p {
+    text-align: center;
+}
+
+.clients p:first-of-type {
+    margin-bottom: 4rem;
+}
+
+.clients p:nth-of-type(2) {
+    font-family: Fraunces, sans-serif;
+    font-weight: 800;
+    color: var(--very-dark-blue);
+}
+
+.clients p:last-of-type {
+    font-size: .9rem;
+    color: var(--gray-blue);
+}
+
+
+.img-client {
+    width: 70px;
+    border-radius: 50%;
+}
+
 
 /* #testimonials-grid items: */
-#testimonials-grid h2 {
-    font-family: Fraunces, serif;
-    font-size: 1rem;
-    text-transform: uppercase;
-    letter-spacing: .3rem;
-    color: var(--gray-blue);
+#testimonials-grid h4 {
     grid-column: 1 / span 3;
+    color: var(--gray-blue);
     text-align: center;
-    padding: 0;
+    margin-bottom: 6rem;
 }
 
-#person-1 {
-    width: 100%;
-    height: 100%;
-    background-color: navajowhite;
+#client-1 {
+
 }
 
-#person-2 {
-    width: 100%;
-    height: 100%;
-    background-color: antiquewhite;
+#client-2 {
+
 }
 
-#person-3 {
-    width: 100%;
-    height: 100%;
-    background-color: navajowhite;
+#client-3 {
+
 }
 /* END #testimonials-grid items: */
+/* END MAIN GRID DESKTOP */
 
 
 /* || FOOTER DESKTOP */
@@ -249,6 +448,15 @@ nav {
     width: 100%;
     height: 300px;
     background-color: darkseagreen;
+}
+/* END FOOTER DESKTOP */
+
+
+/* || VIEWPORTS (Come back to this after creating mobile view */
+@media screen and (max-width: 950px) {
+    #heading {
+        /*top: 11vh;*/
+    }
 }
 
 
