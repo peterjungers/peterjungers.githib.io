@@ -14,6 +14,7 @@ html, body, header, main, footer, section, div, h1, h2, h3, h4, p, a, img, ul, l
     border: 0;
 }
 
+/* || Default styles are for narrow screens */
 /* || GENERAL SITEWIDE STYLES */
 :root {
     /* Primary colors */
@@ -24,7 +25,9 @@ html, body, header, main, footer, section, div, h1, h2, h3, h4, p, a, img, ul, l
     --dark-desaturated-cyan: hsl(167 40% 24%);  /* "Graphic Design" text */
     --dark-desaturated-cyan-alpha-70: hsl(167 40% 24% / .7);
     --dark-blue: hsl(198 62% 26%);  /* "Photography" text */
-    --dark-moderate-cyan: hsl(168 34% 41%); /* Footer */
+    --dark-moderate-cyan: hsl(166 28% 35%); /* Footer text */
+    --dark-moderate-cyan-alpha-70: hsl(166 28% 35% / .7);
+    --light-moderate-cyan: hsl(165 36% 72%);
     /* Neutral colors */
     --very-dark-blue: hsl(212 27% 19%);
     --very-dark-blue-alpha-70: hsl(212 27% 19% / .7);
@@ -42,7 +45,7 @@ html, body, header, main, footer, section, div, h1, h2, h3, h4, p, a, img, ul, l
 body {
     background-color: var(--white);
     font-family: Barlow, sans-serif;
-    font-size: 18px;
+    font-size: 1.125rem;
 }
 
 h1, h2, h3, h4 {
@@ -51,13 +54,14 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-    font-size: 3.75vw;
+    font-size: 10.5vw;
+    letter-spacing: .5rem;
+    /*font-size: calc(1.5rem + 3vw); USE THIS */
     text-transform: uppercase;
-    letter-spacing: .65rem;
 }
 
 h2 {
-    font-size: 2.5rem;
+    font-size: 2.15rem;
 }
 
 h3 {
@@ -65,14 +69,14 @@ h3 {
 }
 
 h4 {
-    font-size: 1.3rem;
+    font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: .3rem;
 }
 
 p {
     color: var(--dark-gray-blue);
-    line-height: 2rem;
+    line-height: 1.9rem;
 }
 
 a {
@@ -87,29 +91,34 @@ img {
 /* END GENERAL SITEWIDE STYLES */
 
 
-/* || UTILITIES DESKTOP */
+/* || UTILITIES */
 .desktop {
-    display: block;
-}
-
-.mobile {
     display: none;
 }
 
-.containers-site {
+.mobile {
+    display: block;
+}
+
+.containers-site { /* Rename this */
     max-width: 1440px;
     margin: 0 auto;
 }
 
 .logo-sunnyside {
-    width: 170px
+    width: 125px;
+}
+
+#hamburger-icon {
+    display: block;
+    width: 25px;
 }
 
 .button {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--white);
+    background-color: var(--yellow);
     font-family: Fraunces, sans-serif;
     font-size: 1rem;
     text-transform: uppercase;
@@ -122,80 +131,128 @@ img {
 .button:hover {
     background-color: var(--white-alpha-25);
 }
-/* END UTILITIES DESKTOP */
+/* END UTILITIES */
 
 
-/* || HEADER DESKTOP */
+/* || HEADER */
 header {
     position: relative;
 }
 
-#header-content {
+#header-logo-nav {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1.85rem 1.25rem 0;
+}
+
+#header-content { /* Rename this */
     display: flex;
     justify-content: center;
 }
 
 #header-content h1 {
     position: absolute;
-    top: 25%;
+    top: 27%;
     color: var(--white);
     text-align: center;
 }
 
 #arrow-down {
     position: absolute;
-    top: 45%;
-    width: 2.5vw;
+    top: 54%;
+    width: 9.5vw;
 }
 
-/* navbar */
-nav {
+/* Header navigation */
+header nav {
+    display: none;
     position: absolute;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    top: 7rem;
     width: 100%;
-    padding: 2.25rem 2.75rem 0;
+    z-index: 1;
 }
 
-#nav-links ul {
+#header-nav-links {
     display: flex;
-    list-style-type: none;
-}
-
-#nav-links li {
-    display: flex;
+    flex-direction: column;
     align-items: center;
-    margin: 0 1.5rem;
+    width: 90%;
 }
 
-#nav-links li:last-of-type {
-    margin-right: 0;
+header nav.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-#nav-links a {
-    color: var(--white);
+/*
+Awesome help with how to make a triangle:
+https://stackoverflow.com/questions/7073484/how-do-css-triangles-work
+https://www.youtube.com/watch?v=tTNxykEAPpA
+*/
+#header-nav-triangle {
+    align-self: end;
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-bottom: 25px solid var(--white);
+    /* Only Chrome has a faint gap, but this can fix it: */
+    /*position: relative;*/
+    /*top: 1px;*/
 }
 
-#nav-links .button {
+#header-nav-links ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    align-items: center;
+    list-style-type: none;
+    background-color: var(--white);
+    width: 100%;
+}
+
+#header-nav-links li {
+    padding: 1rem 0;
+}
+
+#header-nav-links li:first-of-type {
+    padding-top: 2.75rem;
+}
+
+#header-nav-links li:last-of-type {
+    padding-bottom: 2.75rem;
+}
+
+#header-nav-links a:link,
+#header-nav-links a:visited,
+#header-nav-links a:hover,
+#header-nav-links a:focus,
+#header-nav-links a:active {
+    color: var(--dark-gray-blue);
+}
+
+#header-nav-links .button {
     width: 144px;
 }
 
-#nav-links a.button {
+#header-nav-links a.button {
     color: var(--very-dark-blue);
 }
 
-#nav-links a.button:hover {
+#header-nav-links a.button:hover {
     color: var(--white);
 }
-/* END navbar */
-/* END HEADER DESKTOP */
+/* END Header navigation */
+/* END HEADER */
 
 
-/* || MAIN GRID DESKTOP */
+/* || MAIN GRID */
 #main-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
 }
 
 /* Grid item classes: learn-more, learn-more-content */
@@ -205,16 +262,18 @@ nav {
 }
 
 .learn-more-content {
-    width: 62%;
+    text-align: center;
+    width: 100%;
+    padding: 4rem 1.25rem;
 }
 
 .learn-more-content h2 {
     color: var(--very-dark-blue);
-    margin-bottom: 1.75rem;
+    margin-bottom: 1.25rem;
 }
 
 .learn-more-content p {
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
 }
 
 .learn-more-content a {
@@ -254,50 +313,20 @@ for help with figuring out the above underline.
 */
 /* END Grid item classes: learn-more, learn-more-content */
 
-
 /*
 #main-grid items with IDs: text-transform, text-stand-out
 (which use learn-more and learn-more-content classes)
 */
-#text-transform {
-    grid-column: 1;
-}
-
-#text-transform .learn-more-content {
-    margin-left: 22%;
-}
-
 #text-transform .learn-more-content a::before {
     background-color: var(--yellow-alpha-25);
-}
-
-#text-transform .learn-more-content a:hover::before {
-    background-color: var(--yellow)
-}
-
-#text-stand-out {
-    grid-column: 2;
-}
-
-#text-stand-out.learn-more {
-    justify-content: end;
-}
-
-#text-stand-out .learn-more-content {
-    margin-right: 22%;
 }
 
 #text-stand-out .learn-more-content a::before {
     background-color: var(--soft-red-alpha-25);
 }
-
-#text-stand-out .learn-more-content a:hover::before {
-    background-color: var(--soft-red)
-}
 /* END #main-grid items with IDs: text-transform, text-stand-out */
 
-
-/* Grid item classes: skills, skills-content */
+/* #main-grid item classes: skills, skills-content */
 .skills {
     position: relative;
     display: flex;
@@ -308,7 +337,7 @@ for help with figuring out the above underline.
 .skills-content {
     position: absolute;
     top: 66%;
-    width: 50%;
+    width: 90%;
     text-align: center;
 }
 
@@ -317,29 +346,21 @@ for help with figuring out the above underline.
 }
 
 .skills-content p {
-    font-size: 17px;
+    font-size: 1.063rem;
     line-height: 1.75rem;
 }
-/* END Grid item classes: skills, skills-content */
+/* END #main-grid item classes: skills, skills-content */
 
 /*
 #main-grid items with IDs: graphic-design, photography
 (which use skills and skills-content classes)
 */
-#graphic-design {
-    grid-column: 1;
-}
-
 #graphic-design .skills-content h3 {
     color: var(--dark-desaturated-cyan);
 }
 
 #graphic-design .skills-content p {
     color: var(--dark-desaturated-cyan-alpha-70);
-}
-
-#photography {
-    grid-column: 2;
 }
 
 #photography .skills-content h3 {
@@ -351,31 +372,52 @@ for help with figuring out the above underline.
 }
 /* END #main-grid items with IDs: graphic-design, photography */
 
+/* #testimonials */
+#testimonials {
+    grid-column: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 #testimonials-grid {
-    grid-column: 1 / span 2;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: 2.25rem;
-    padding: 9rem 10rem;
+    grid-template-columns: 1fr;
+    column-gap: 0;
+    justify-content: center;
+    width: 90%;
+    margin: 4rem 0 5rem;
+}
+
+#testimonials-grid h4 {
+    grid-column: 1;
+    color: var(--gray-blue);
+    text-align: center;
+    margin-bottom: 4rem;
 }
 
 .clients {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 4rem;
+}
+
+.clients:last-of-type {
+    margin-bottom: 0;
 }
 
 .clients img {
-    margin-bottom: 3.25rem;
+    margin-bottom: 2rem;
 }
 
 .clients p {
+    color: var(--very-dark-gray-blue);
     text-align: center;
 }
 
 .clients p:first-of-type {
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
 }
 
 .clients p:nth-of-type(2) {
@@ -389,67 +431,106 @@ for help with figuring out the above underline.
     color: var(--gray-blue);
 }
 
-
 .img-client {
     width: 70px;
     border-radius: 50%;
 }
+/* END #testimonials */
 
-
-/* #testimonials-grid items: */
-#testimonials-grid h4 {
-    grid-column: 1 / span 3;
-    color: var(--gray-blue);
-    text-align: center;
-    margin-bottom: 6rem;
-}
-
-#client-1 {
-
-}
-
-#client-2 {
-
-}
-
-#client-3 {
-
-}
-/* END #testimonials-grid items: */
-/* END MAIN GRID DESKTOP */
-
-
-/* || FOOTER DESKTOP */
-#footer-images-grid {
+#four-images-grid {
+    grid-column: 1;
+    grid-template-columns: repeat(2, 1fr);
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
     width: 100%;
+}
+/* END MAIN GRID */
+
+
+/* || FOOTER */
+footer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--light-moderate-cyan);
 }
 
-/* #footer-images-grid items: */
-#img-milk-bottles {
-    width: 100%;
+#footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 4.5rem 0;
 }
 
-#img-orange {
-    width: 100%;
+#footer-content a:link,
+#footer-content a:visited,
+#footer-content a:focus,
+#footer-content a:active {
+    color: var(--dark-moderate-cyan-alpha-70);
 }
 
-#img-cone {
-    width: 100%;
+#footer-content a:hover {
+    color: var(--white);
 }
 
-#img-sugar-cubes {
-    width: 100%;
+#footer-content .logo-sunnyside {
+    fill: var(--dark-moderate-cyan);
+    width: 170px;
+    margin-bottom: 2.5rem;
 }
-/* END #footer-images-grid items: */
 
-#text-footer {
-    width: 100%;
-    height: 300px;
-    background-color: darkseagreen;
+/* Footer navigation */
+footer nav {
+    margin-bottom: 5.5rem;
 }
-/* END FOOTER DESKTOP */
+
+#footer-content nav ul {
+    display: flex;
+    list-style-type: none;
+}
+
+#footer-content nav li {
+    display: flex;
+    align-items: center;
+    margin: 0 1.5rem;
+}
+/* END Footer navigation */
+
+#footer-social-media-logos {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 1rem;
+}
+
+#footer-social-media-logos img {
+    height: 20px; /* Needs to be set because Twitter logo ratio isn't square */
+}
+
+#facebook:hover {
+    content: url("images/icon-facebook-white.svg");
+}
+
+#instagram:hover {
+    content: url("images/icon-instagram-white.svg");
+}
+
+#twitter:hover {
+    content: url("images/icon-twitter-white.svg");
+}
+
+#pinterest:hover {
+    content: url("images/icon-pinterest-white.svg");
+}
+
+.attribution {
+    font-size: .69rem;
+    color: var(--dark-moderate-cyan);
+}
+
+.attribution a {
+    color: var(--light-moderate-cyan);
+}
+/* END FOOTER */
 
 
 /* || VIEWPORTS (Come back to this after creating mobile view */
@@ -460,62 +541,203 @@ for help with figuring out the above underline.
 }
 
 
-/* || MOBILE VIEWPORT */
-@media screen and (max-width: 480px) {
-    /* || UTILITIES MOBILE */
-    .desktop {
-        display: none;
+/* || DESKTOP VIEWPORT */
+@media screen and (min-width: 480px) {
+    /* || GENERAL SITEWIDE STYLES: Desktop viewport */
+    h1 {
+        font-size: 3.75vw;
+        letter-spacing: .65rem;
     }
 
-    .mobile {
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    h4 {
+        font-size: 1.3rem;
+    }
+
+    p {
+        line-height: 2rem;
+    }
+    /* END GENERAL SITEWIDE STYLES: Desktop viewport */
+
+    /* || UTILITIES: Desktop viewport */
+    .desktop {
         display: block;
     }
 
+    .mobile {
+        display: none;
+    }
 
-    /* || MAIN GRID MOBILE */
+    .logo-sunnyside {
+        width: 170px;
+    }
+    /* END UTILITIES: Desktop viewport */
+
+
+    /* || HEADER: Desktop viewport */
+    #header-content h1 {
+        top: 25%;
+    }
+
+    #arrow-down {
+        top: 45%;
+        width: 2.5vw;
+    }
+
+    /* Header navigation */
+    #header-logo-nav {
+        padding: 2.25rem 2.75rem 0;
+    }
+
+    #hamburger-icon {
+        display: none;
+    }
+
+    #header-nav-links {
+        display: block;
+        /*overflow: hidden;*/
+    }
+
+    #header-nav-links.active {
+        /*display: block;*/
+        /*overflow: visible;*/
+    }
+    /* END Header navigation */
+    /* END HEADER: Desktop viewport */
+
+
+    /* || MAIN GRID: Desktop viewport */
     #main-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    #text-transform,
-    #img-transform,
-    #img-stand-out,
-    #text-stand-out,
-    #graphic-design,
-    #photography {
-        grid-column: 1;
-    }
-
-    #img-transform {
-        grid-row: 1;
-    }
-
-    #testimonials-grid {
-        grid-template-columns: 1fr;
+    /* #main-grid item classes: learn-more, learn-more-content */
+    .learn-more-content {
+        text-align: left;
+        width: 62%;
         padding: 0;
     }
 
-
-    /* || FOOTER MOBILE */
-    #footer-images-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .learn-more-content h2 {
+        margin-bottom: 1.75rem;
     }
+
+    .learn-more-content p {
+        margin-bottom: 2.5rem;
+    }
+    /* END #main-grid item classes: learn-more, learn-more-content */
+
+    /*
+    #main-grid items with IDs: text-transform, text-stand-out
+    (which use learn-more and learn-more-content classes)
+    */
+    #text-transform {
+        grid-row: 1;
+    }
+
+    #text-transform .learn-more-content {
+        margin-left: 22%;
+    }
+
+    #text-transform .learn-more-content a:hover::before {
+        background-color: var(--yellow)
+    }
+
+    #text-stand-out.learn-more {
+        justify-content: end;
+    }
+
+    #text-stand-out .learn-more-content {
+        margin-right: 22%;
+    }
+
+    #text-stand-out .learn-more-content a:hover::before {
+        background-color: var(--soft-red)
+    }
+
+    #img-transform {
+        grid-column: 2;
+    }
+    /* END #main-grid items with IDs: text-transform, text-stand-out */
+
+    /* #main-grid item classes: skills, skills-content */
+    .skills-content {
+        width: 50%;
+    }
+    /* END #main-grid item classes: skills, skills-content */
+
+    /* #testimonials: */
+    #testimonials {
+        grid-column: 1 / span 2;
+    }
+
+    #testimonials-grid {
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 2.25rem;
+        width: 100%;
+        margin: 9rem 10rem;
+    }
+
+    #testimonials-grid h4 {
+        grid-column: 1 / span 3;
+        margin-bottom: 6rem;
+    }
+
+    .clients {
+        margin-bottom: 0;
+    }
+
+    .clients img {
+        margin-bottom: 3.25rem;
+    }
+
+    .clients p:first-of-type {
+        margin-bottom: 4rem;
+    }
+    /* END #testimonials */
+
+    #four-images-grid {
+        grid-column: 1 / span 2;
+        grid-template-columns: repeat(4, 1fr);
+    }
+    /* END MAIN GRID: Desktop viewport */
 }
 
-
-
-
-
-
-
-
-
-
-/*.attribution {*/
-/*    font-size: 11px;*/
-/*    text-align: center;*/
+/* Desktop nav styles */
+/*#header-nav-links ul {*/
+/*    display: flex;*/
+/*    list-style-type: none;*/
 /*}*/
 
-/*.attribution a {*/
-/*    color: hsl(228, 45%, 44%);*/
+/*#header-nav-links li {*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    margin: 0 1.5rem;*/
+/*}*/
+
+/*#header-nav-links li:last-of-type {*/
+/*    margin-right: 0;*/
+/*}*/
+
+/*#header-nav-links a:link,*/
+/*#header-nav-links a:visited,*/
+/*#header-nav-links a:hover,*/
+/*#header-nav-links a:focus,*/
+/*#header-nav-links a:active {*/
+/*    color: var(--white);*/
+/*}*/
+
+/*#header-nav-links .button {*/
+/*    width: 144px;*/
+/*}*/
+
+/*#header-nav-links a.button {*/
+/*    color: var(--very-dark-blue);*/
+/*}*/
+
+/*#header-nav-links a.button:hover {*/
+/*    color: var(--white);*/
 /*}*/
