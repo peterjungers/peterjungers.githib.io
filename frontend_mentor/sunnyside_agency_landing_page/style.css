@@ -45,7 +45,6 @@ html, body, header, main, footer, section, div, h1, h2, h3, h4, p, a, img, ul, l
 body {
     background-color: var(--white);
     font-family: Barlow, sans-serif;
-    font-size: 1.125rem;
 }
 
 h1, h2, h3, h4 {
@@ -54,9 +53,10 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-    font-size: 10.5vw;
-    letter-spacing: .5rem;
-    /*font-size: calc(1.5rem + 3vw); USE THIS */
+    /*font-size: 10.5vw;*/
+    letter-spacing: .45rem;
+    /*font-size: calc(2.1rem + 1.5vw);*/
+    font-size: calc(1rem + 6.5vw);
     text-transform: uppercase;
 }
 
@@ -75,6 +75,7 @@ h4 {
 }
 
 p {
+    font-size: 1.125rem;
     color: var(--dark-gray-blue);
     line-height: 1.9rem;
 }
@@ -140,7 +141,7 @@ header {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 1.85rem 1.5rem 0; /* Uses padding, but rest of site uses margin */
+    padding: 1.85rem 1.5rem 0;
 }
 
 #header-content { /* Rename this */
@@ -504,22 +505,6 @@ footer nav {
     height: 20px; /* Needs to be set because Twitter logo ratio isn't square */
 }
 
-/*#facebook:hover {*/
-/*    content: url("images/icon-facebook-white.svg");*/
-/*}*/
-
-/*#instagram:hover {*/
-/*    content: url("images/icon-instagram-white.svg");*/
-/*}*/
-
-/*#twitter:hover {*/
-/*    content: url("images/icon-twitter-white.svg");*/
-/*}*/
-
-/*#pinterest:hover {*/
-/*    content: url("images/icon-pinterest-white.svg");*/
-/*}*/
-
 .attribution {
     font-size: .69rem;
     color: var(--dark-moderate-cyan);
@@ -531,24 +516,21 @@ footer nav {
 /* END FOOTER */
 
 
-/* || VIEWPORTS (Come back to this after creating mobile view */
-@media screen and (max-width: 950px) {
-    #heading {
-        /*top: 11vh;*/
-    }
-}
-
-
-/* || DESKTOP VIEWPORT */
-@media screen and (min-width: 768px) {
-    /* || GENERAL SITEWIDE STYLES: Desktop viewport */
+/* || 720 MIN-WIDTH VIEWPORT */
+@media screen and (min-width: 720px) {
+    /* || GENERAL SITEWIDE STYLES: 720 min-width viewport */
     h1 {
-        font-size: 3.75vw;
+        /*font-size: 3.75vw;*/
+        font-size: calc(1rem + 2.7vw);
         letter-spacing: .65rem;
     }
 
     h2 {
-        font-size: 2.5rem;
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.25rem;
     }
 
     h4 {
@@ -556,11 +538,12 @@ footer nav {
     }
 
     p {
-        line-height: 2rem;
+        font-size: 1rem;
+        line-height: 1.8rem;
     }
-    /* END GENERAL SITEWIDE STYLES: Desktop viewport */
+    /* END GENERAL SITEWIDE STYLES: : 720 min-width viewport */
 
-    /* || UTILITIES: Desktop viewport */
+    /* || UTILITIES: : 720 min-width viewport */
     .img-desktop {
         display: block;
     }
@@ -569,17 +552,13 @@ footer nav {
         display: none;
     }
 
-    .logo-sunnyside {
-        width: 170px;
-    }
-
-    #hamburger-icon {
-        display: none;
-    }
-    /* END UTILITIES: Desktop viewport */
+    /*.logo-sunnyside {*/
+    /*    width: 170px;*/
+    /*}*/
+    /* END UTILITIES: : 720 min-width viewport */
 
 
-    /* || HEADER: Desktop viewport */
+    /* || HEADER: : 720 min-width viewport */
     #header-logo-nav {
         padding: 2.25rem 2.75rem 0;
     }
@@ -594,6 +573,156 @@ footer nav {
     }
 
     /* Header navigation */
+    .header-nav-links {
+        align-items: end;
+        padding-right: 2.75rem
+    }
+
+    .header-nav-links ul {
+        width: 42%;
+    }
+    /* END Header navigation */
+    /*END HEADER: 720 min-width viewport*/
+
+
+    /* || MAIN GRID: 720 min-width viewport */
+    #main-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* #main-grid item classes: learn-more, learn-more-content */
+    .learn-more-content {
+        text-align: left;
+        width: 100%;
+        padding: 0;
+        margin: 0 2.25rem
+    }
+
+    .learn-more-content h2 {
+        margin-bottom: 1rem;
+    }
+
+    .learn-more-content p {
+        margin-bottom: 1.5rem;
+    }
+    /* END #main-grid item classes: learn-more, learn-more-content */
+
+    /*
+    #main-grid items with IDs: text-transform, text-stand-out, #img-transform
+    (which use learn-more and learn-more-content classes)
+    */
+    #text-transform {
+        grid-row: 1;
+    }
+
+    #text-transform .learn-more-content a:hover::before {
+        background-color: var(--yellow)
+    }
+
+    #text-stand-out.learn-more {
+        justify-content: end;
+    }
+
+    #text-stand-out .learn-more-content a:hover::before {
+        background-color: var(--soft-red)
+    }
+
+    #img-transform {
+        grid-column: 2;
+    }
+    /* END #main-grid items with IDs: text-transform, text-stand-out, #img-transform */
+
+    /* #main-grid item classes: skills, skills-content */
+    .skills-content {
+        top: 60%;
+        width: 100%;
+        padding: 0 2.25rem;
+    }
+
+    .skills-content h3 {
+        margin-bottom: .75rem;
+    }
+
+    .skills-content p {
+        font-size: .9rem;
+        line-height: 1.25rem;
+    }
+    /* END #main-grid item classes: skills, skills-content */
+
+    /* #testimonials */
+    #testimonials {
+        grid-column: 1 / span 2;
+    }
+
+    #testimonials-grid {
+        grid-template-columns: 1fr;
+        row-gap: 2.25rem;
+        padding: 0;
+        margin: 7rem 12rem;
+    }
+
+    #testimonials-grid h4 {
+        grid-column: 1;
+        margin-bottom: 3rem;
+    }
+
+    .clients {
+        margin-bottom: 2.5rem;
+    }
+
+    .clients img {
+        margin-bottom: 2rem;
+    }
+
+    .clients p:first-of-type {
+        margin-bottom: 2rem;
+    }
+    /* END #testimonials */
+
+    #four-images-grid {
+        grid-column: 1 / span 2;
+        grid-template-columns: repeat(4, 1fr);
+    }
+    /* END MAIN GRID: Desktop viewport */
+}
+/* END 768 MIN-WIDTH VIEWPORT */
+
+
+/* || 820 MIN-WIDTH VIEWPORT */
+@media screen and (min-width: 821px) {
+    #testimonials-grid {
+        margin: 7rem 15rem;
+    }
+}
+/* END 820 MIN-WIDTH VIEWPORT */
+
+
+/* || 1024 MIN-WIDTH VIEWPORT */
+@media screen and (min-width: 1024px) {
+    /* || GENERAL SITEWIDE STYLES: 1024 min-width viewport */
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    h3 {
+        font-size: 1.8rem;
+    }
+
+    p {
+        font-size: 1.125rem;
+        line-height: 2rem;
+    }
+
+    /* || UTILITIES: : 1024 min-width viewport */
+    .logo-sunnyside {
+        width: 170px;
+    }
+
+    #hamburger-icon {
+        display: none;
+    }
+
+    /* || HEADER AND NAVIGATION: : 1024 min-width viewport */
     #nav-desktop {
         display: block;
     }
@@ -633,27 +762,23 @@ footer nav {
     .header-nav-links a:active {
         color: var(--white);
     }
+
     .header-nav-links .button {
         width: 144px;
     }
+
     .header-nav-links a.button {
         background-color: var(--white);
         color: var(--very-dark-blue);
     }
+
     .header-nav-links a.button:hover {
         background-color: var(--white-alpha-25);
         color: var(--white);
     }
-     /*END Header navigation*/
-     /*END HEADER: Desktop viewport*/
+    /* END HEADER AND NAVIGATION: : 1024 min-width viewport */
 
-
-    /* || MAIN GRID: Desktop viewport */
-    #main-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    /* #main-grid item classes: learn-more, learn-more-content */
+    /* || MAIN GRID: 1024 min-width viewport */
     .learn-more-content {
         text-align: left;
         width: 62%;
@@ -667,57 +792,33 @@ footer nav {
     .learn-more-content p {
         margin-bottom: 2.5rem;
     }
-    /* END #main-grid item classes: learn-more, learn-more-content */
-
-    /*
-    #main-grid items with IDs: text-transform, text-stand-out
-    (which use learn-more and learn-more-content classes)
-    */
-    #text-transform {
-        grid-row: 1;
-    }
 
     #text-transform .learn-more-content {
+        margin-right: 0;
         margin-left: 22%;
     }
 
-    #text-transform .learn-more-content a:hover::before {
-        background-color: var(--yellow)
-    }
-
-    #text-stand-out.learn-more {
-        justify-content: end;
-    }
-
     #text-stand-out .learn-more-content {
+        margin-left: 0;
         margin-right: 22%;
     }
 
-    #text-stand-out .learn-more-content a:hover::before {
-        background-color: var(--soft-red)
-    }
-
-    #img-transform {
-        grid-column: 2;
-    }
-    /* END #main-grid items with IDs: text-transform, text-stand-out */
-
-    /* #main-grid item classes: skills, skills-content */
     .skills-content {
-        width: 50%;
+        top: 58%;
+        width: 70%;
         padding: 0;
     }
-    /* END #main-grid item classes: skills, skills-content */
+
+    .skills-content p {
+        font-size: 1.063rem;
+        line-height: 1.75rem;
+    }
 
     /* #testimonials: */
-    #testimonials {
-        grid-column: 1 / span 2;
-    }
-
     #testimonials-grid {
         grid-template-columns: repeat(3, 1fr);
+        row-gap: 0;
         column-gap: 2.25rem;
-        padding: 0;
         margin: 9rem 10rem;
     }
 
@@ -738,10 +839,37 @@ footer nav {
         margin-bottom: 4rem;
     }
     /* END #testimonials */
+    /* END MAIN GRID: 1024 min-width viewport */
+}
+/* END 1024 MIN-WIDTH VIEWPORT */
 
-    #four-images-grid {
-        grid-column: 1 / span 2;
-        grid-template-columns: repeat(4, 1fr);
+
+/* || 1165 MIN-WIDTH VIEWPORT */
+@media screen and (min-width: 1165px) {
+    .skills-content {
+        top: 62%;
+        width: 60%;
     }
-    /* END MAIN GRID: Desktop viewport */
+}
+
+
+/* || 1300 MIN-WIDTH VIEWPORT */
+@media screen and (min-width: 1300px) {
+    .skills-content {
+        top: 66%;
+        width: 60%;
+    }
+}
+
+
+/* || 1140 MIN-WIDTH VIEWPORT */
+@media screen and (min-width: 1440px) {
+    .skills-content {
+        top: 66%;
+        width: 50%;
+    }
+
+    .skills-content h3 {
+        margin-bottom: 1.5rem;
+    }
 }

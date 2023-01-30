@@ -5,36 +5,38 @@ Exercise: Sunnyside agency landing page
 */
 
 
-const hamburgerIcon = document.querySelector("#hamburger-icon");
-const hamburgerImg = document.querySelector("#hamburger-icon img");
-const navLinks = document.querySelector("header #nav-mobile");
+// Mobile navigation menu:
+window.addEventListener("DOMContentLoaded", () => {
+    const hamburgerIcon = document.querySelector("#hamburger-icon");
+    const hamburgerImg = document.querySelector("#hamburger-icon img");
+    const navLinks = document.querySelector("header #nav-mobile");
 
-
-function toggleNavMenu() {
-    hamburgerIcon.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
-        toggleHamburgerIcon();
-        closeNavMenuOnResize();
-    });
-}
-
-
-function toggleHamburgerIcon() {
-    if (navLinks.classList.contains("active")) {
-        hamburgerImg.src = "images/icon-hamburger-alpha-50.svg";
-    } else {
-        hamburgerImg.src = "images/icon-hamburger.svg";
+    function toggleNavMenu() {
+        hamburgerIcon.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+            toggleHamburgerIcon();
+            closeNavMenuOnResize();
+        });
     }
-}
 
-
-function closeNavMenuOnResize() {
-    window.addEventListener("resize", () => {
+    function toggleHamburgerIcon() {
         if (navLinks.classList.contains("active")) {
-        navLinks.classList.toggle("active");
+            hamburgerImg.src = "images/icon-hamburger-alpha-50.svg";
+        } else {
+            hamburgerImg.src = "images/icon-hamburger.svg";
         }
-    });
-}
+    }
+
+    function closeNavMenuOnResize() {
+        window.addEventListener("resize", () => {
+            if (navLinks.classList.contains("active")) {
+                navLinks.classList.toggle("active");
+            }
+        });
+    }
+
+    return toggleNavMenu();
+});
 
 
 function socialMediaImgHover() {
@@ -67,6 +69,4 @@ function socialMediaImgHover() {
     });
 }
 
-
-window.addEventListener("DOMContentLoaded", toggleNavMenu);
 window.addEventListener("DOMContentLoaded", socialMediaImgHover);
