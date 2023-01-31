@@ -63,6 +63,10 @@ a {
     text-decoration: none;
 }
 
+a:focus {
+    outline-color: var(--dark-gray-blue);
+}
+
 img {
     width: 100%;
 }
