@@ -1,0 +1,939 @@
+/*
+Name: Peter Jungers
+Date: January 2023
+Exercise: Frontend Mentor: Sunnyside agency landing page
+*/
+
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:opsz,wght@9..144,700;9..144,800&display=swap');
+
+/* || CSS RESET */
+html, body, header, main, footer, section, div, h1, h2, h3, h4, p, a, img, ul, li, button {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+/* || Default styles are for narrow screens */
+/* || GENERAL SITEWIDE STYLES */
+:root {
+    /* Primary colors */
+    --soft-red: hsl(7 99% 70%);
+    --soft-red-alpha-25: hsl(7 99% 70% / .25);
+    --yellow: hsl(51 100% 49%);
+    --yellow-alpha-25: hsl(51 100% 49% / .25);
+    --dark-desaturated-cyan: hsl(167 40% 24%);  /* "Graphic Design" text */
+    --dark-desaturated-cyan-alpha-70: hsl(167 40% 24% / .7);
+    --dark-blue: hsl(198 62% 26%);  /* "Photography" text */
+    --dark-moderate-cyan: hsl(166 28% 35%); /* Footer text */
+    --dark-moderate-cyan-alpha-70: hsl(166 28% 35% / .7);
+    --light-moderate-cyan: hsl(165 36% 72%);
+    /* Neutral colors */
+    --very-dark-blue: hsl(212 27% 19%);
+    --very-dark-blue-alpha-70: hsl(212 27% 19% / .7);
+    --very-dark-gray-blue: hsl(213 9% 39%);
+    --dark-gray-blue: hsl(232 10% 55%);
+    --gray-blue: hsl(210 4% 67%);
+    --white: hsl(0 0% 100%);
+    --white-alpha-25: hsl(0 0% 100% / .25);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--white);
+    font-family: Barlow, sans-serif;
+}
+
+h1, h2, h3, h4 {
+    font-family: Fraunces, sans-serif;
+    font-weight: 800;
+}
+
+h1 {
+    letter-spacing: .45rem;
+    font-size: calc(1rem + 6.5vw);
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 2.15rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+h4 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: .3rem;
+}
+
+p {
+    font-size: 1.125rem;
+    color: var(--dark-gray-blue);
+    line-height: 1.9rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:focus {
+    outline-color: var(--very-dark-blue);
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+/* END GENERAL SITEWIDE STYLES */
+
+
+/* || UTILITIES */
+.img-desktop {
+    display: none;
+}
+
+.img-mobile {
+    display: block;
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.logo-sunnyside {
+    width: 125px;
+}
+
+#hamburger-icon {
+    display: block;
+    width: 25px;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--yellow);
+    font-family: Fraunces, sans-serif;
+    font-size: 1rem;
+    text-transform: uppercase;
+    width: 100%;
+    height: 56px;
+    border-radius: 28px;
+}
+/* END UTILITIES */
+
+
+/* || HEADER */
+header {
+    position: relative;
+}
+
+#header-logo-nav {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1.85rem 1.5rem 0;
+}
+
+#heading-arrow {
+    display: flex;
+    justify-content: center;
+}
+
+#heading-arrow h1 {
+    position: absolute;
+    top: 27%;
+    color: var(--white);
+    text-align: center;
+}
+
+#arrow-down {
+    position: absolute;
+    top: 54%;
+    width: 9.5vw;
+}
+
+/* Header navigation */
+#nav-desktop {
+    display: none;
+}
+
+#nav-mobile {
+    display: none;
+    position: absolute;
+    top: 5rem;
+    width: 100%;
+    z-index: 1;
+}
+
+#nav-mobile.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header-nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0 1.5rem
+}
+
+/*
+Awesome help with how to make a triangle:
+https://stackoverflow.com/questions/7073484/how-do-css-triangles-work
+https://www.youtube.com/watch?v=tTNxykEAPpA
+*/
+#header-nav-triangle {
+    align-self: end;
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-bottom: 25px solid var(--white);
+    /* Only Chrome seems to have a faint gap, but this can fix it: */
+    /*position: relative;*/
+    /*top: 1px;*/
+}
+
+.header-nav-links ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    align-items: center;
+    list-style-type: none;
+    background-color: var(--white);
+    width: 100%;
+}
+
+.header-nav-links li {
+    font-size: 1.25rem;
+    padding: 1rem 0;
+}
+
+.header-nav-links li:first-of-type {
+    padding-top: 2.5rem;
+}
+
+.header-nav-links li:last-of-type {
+    padding-bottom: 2.5rem;
+}
+
+.header-nav-links a:link,
+.header-nav-links a:visited,
+.header-nav-links a:hover,
+.header-nav-links a:focus,
+.header-nav-links a:active {
+    color: var(--dark-gray-blue);
+}
+
+.header-nav-links .button {
+    width: 144px;
+}
+
+.header-nav-links a.button {
+    color: var(--very-dark-blue);
+}
+/* END Header navigation */
+/* END HEADER */
+
+
+/* || MAIN GRID */
+#main-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+/* Grid item classes: learn-more, learn-more-content */
+.learn-more {
+    display: flex;
+    align-items: center;
+}
+
+.learn-more-content {
+    text-align: center;
+    width: 100%;
+    padding: 4rem 1.25rem;
+}
+
+.learn-more-content h2 {
+    color: var(--very-dark-blue);
+    margin-bottom: 1.25rem;
+}
+
+.learn-more-content p {
+    margin-bottom: 2rem;
+}
+
+.learn-more-content a {
+    position: relative;
+    font-family: Fraunces, sans-serif;
+    font-weight: 800;
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    padding: 0 .5rem;
+}
+
+.learn-more-content a:link,
+.learn-more-content a:visited,
+.learn-more-content a:hover,
+.learn-more-content a:focus,
+.learn-more-content a:active {
+    color: var(--dark-blue);
+}
+
+/*
+Link underline: see #main-grid items section below for
+underline styles specific to grid item
+*/
+.learn-more-content a::before {
+    position: absolute;
+    top: 62%;
+    content: "";
+    width: 100%;
+    height: 10px;
+    margin: 0 1rem 0 -.5rem;
+    border-radius: 5px;
+    z-index: -1;
+}
+/*
+Thanks to https://stackoverflow.com/a/68127409/21046255
+for help with figuring out the above underline.
+*/
+/* END Grid item classes: learn-more, learn-more-content */
+
+/*
+#main-grid items with IDs: text-transform, text-stand-out
+(which use learn-more and learn-more-content classes)
+*/
+#text-transform .learn-more-content a::before {
+    background-color: var(--yellow-alpha-25);
+}
+
+#text-stand-out .learn-more-content a::before {
+    background-color: var(--soft-red-alpha-25);
+}
+/* END #main-grid items with IDs: text-transform, text-stand-out */
+
+/* #main-grid item classes: skills, skills-content */
+.skills {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.skills-content {
+    position: absolute;
+    top: 66%;
+    text-align: center;
+    width: 100%;
+    padding: 0 1.25rem;
+}
+
+.skills-content h3 {
+    margin-bottom: 1.5rem;
+}
+
+.skills-content p {
+    font-size: 1.063rem;
+    line-height: 1.75rem;
+}
+/* END #main-grid item classes: skills, skills-content */
+
+/*
+#main-grid items with IDs: graphic-design, photography
+(which use skills and skills-content classes)
+*/
+#graphic-design .skills-content h3 {
+    color: var(--dark-desaturated-cyan);
+}
+
+#graphic-design .skills-content p {
+    color: var(--dark-desaturated-cyan-alpha-70);
+}
+
+#photography .skills-content h3 {
+    color: var(--very-dark-blue);
+}
+
+#photography .skills-content p {
+    color: var(--very-dark-blue-alpha-70);
+}
+/* END #main-grid items with IDs: graphic-design, photography */
+
+/* #testimonials */
+#testimonials {
+    grid-column: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 0;
+    justify-content: center;
+    padding: 0 1.25rem;
+    margin: 4rem 0 5rem;
+}
+
+#testimonials-grid h4 {
+    grid-column: 1;
+    color: var(--gray-blue);
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.clients {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+.clients:last-of-type {
+    margin-bottom: 0;
+}
+
+.clients img {
+    margin-bottom: 2rem;
+}
+
+.clients p {
+    color: var(--very-dark-gray-blue);
+    text-align: center;
+}
+
+.clients p:first-of-type {
+    margin-bottom: 2rem;
+}
+
+.clients p:nth-of-type(2) {
+    font-family: Fraunces, sans-serif;
+    font-weight: 800;
+    color: var(--very-dark-blue);
+}
+
+.clients p:last-of-type {
+    font-size: .9rem;
+    color: var(--gray-blue);
+}
+
+.img-client {
+    width: 70px;
+    border-radius: 50%;
+}
+/* END #testimonials */
+
+#four-images-grid {
+    grid-column: 1;
+    grid-template-columns: repeat(2, 1fr);
+    display: grid;
+    width: 100%;
+}
+/* END MAIN GRID */
+
+
+/* || FOOTER */
+footer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--light-moderate-cyan);
+}
+
+#footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 4.5rem 0;
+}
+
+#footer-content a:link,
+#footer-content a:visited,
+#footer-content a:focus,
+#footer-content a:active {
+    color: var(--dark-moderate-cyan-alpha-70);
+}
+
+#footer-content a:hover {
+    color: var(--white);
+}
+
+#footer-content .logo-sunnyside {
+    fill: var(--dark-moderate-cyan);
+    width: 170px;
+    margin-bottom: 2.5rem;
+}
+
+/* Footer navigation */
+footer nav {
+    margin-bottom: 5.5rem;
+}
+
+#footer-content nav ul {
+    display: flex;
+    list-style-type: none;
+}
+
+#footer-content nav li {
+    display: flex;
+    align-items: center;
+    margin: 0 1.5rem;
+}
+/* END Footer navigation */
+
+#footer-social-media-logos {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 1rem;
+}
+
+#footer-social-media-logos img {
+    height: 20px; /* Needs to be set because Twitter logo ratio isn't square */
+}
+
+#attribution {
+    display: flex;
+    column-gap: .15rem;
+}
+
+#attribution p {
+    font-size: .69rem;
+    color: var(--dark-moderate-cyan);
+}
+
+#attribution a {
+    color: var(--light-moderate-cyan);
+}
+/* END FOOTER */
+/* END Default styles */
+
+
+/* || 720 MIN-WIDTH VIEWPORT */
+@media screen and (min-width: 720px) {
+    /* || GENERAL SITEWIDE STYLES: 720 min-width viewport */
+    h1 {
+        /*font-size: 3.75vw;*/
+        font-size: calc(1rem + 2.7vw);
+        letter-spacing: .65rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+    }
+
+    h4 {
+        font-size: 1.3rem;
+    }
+
+    p {
+        font-size: 1rem;
+        line-height: 1.8rem;
+    }
+    /* END GENERAL SITEWIDE STYLES: : 720 min-width viewport */
+
+    /* || UTILITIES: : 720 min-width viewport */
+    .img-desktop {
+        display: block;
+    }
+
+    .img-mobile {
+        display: none;
+    }
+    /* END UTILITIES: : 720 min-width viewport */
+
+
+    /* || HEADER: : 720 min-width viewport */
+    #header-logo-nav {
+        padding: 2.25rem 2.75rem 0;
+    }
+
+    #heading-arrow h1 {
+        top: 25%;
+    }
+
+    #arrow-down {
+        top: 45%;
+        width: 2.5vw;
+    }
+
+    /* Header navigation */
+    .header-nav-links {
+        align-items: end;
+        padding-right: 2.75rem
+    }
+
+    .header-nav-links ul {
+        width: 42%;
+    }
+
+    .header-nav-links li:first-of-type {
+        padding-top: 2rem;
+    }
+
+    .header-nav-links li:last-of-type {
+        padding-bottom: 2rem;
+    }
+    /* END Header navigation */
+    /*END HEADER: 720 min-width viewport*/
+
+
+    /* || MAIN GRID: 720 min-width viewport */
+    #main-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* #main-grid item classes: learn-more, learn-more-content */
+    .learn-more-content {
+        text-align: left;
+        width: 100%;
+        padding: 0;
+        margin: 0 2.25rem
+    }
+
+    .learn-more-content h2 {
+        margin-bottom: 1rem;
+    }
+
+    .learn-more-content p {
+        margin-bottom: 1.5rem;
+    }
+    /* END #main-grid item classes: learn-more, learn-more-content */
+
+    /*
+    #main-grid items with IDs: text-transform, text-stand-out, #img-transform
+    (which use learn-more and learn-more-content classes)
+    */
+    #text-transform {
+        grid-row: 1;
+    }
+
+    #text-transform .learn-more-content a:hover::before {
+        background-color: var(--yellow)
+    }
+
+    #text-stand-out.learn-more {
+        justify-content: end;
+    }
+
+    #text-stand-out .learn-more-content a:hover::before {
+        background-color: var(--soft-red)
+    }
+
+    #img-transform {
+        grid-column: 2;
+    }
+    /* END #main-grid items with IDs: text-transform, text-stand-out, #img-transform */
+
+    /* #main-grid item classes: skills, skills-content */
+    .skills-content {
+        top: 60%;
+        width: 100%;
+        padding: 0 2.25rem;
+    }
+
+    .skills-content h3 {
+        margin-bottom: .75rem;
+    }
+
+    .skills-content p {
+        font-size: .9rem;
+        line-height: 1.25rem;
+    }
+    /* END #main-grid item classes: skills, skills-content */
+
+    /* #testimonials */
+    #testimonials {
+        grid-column: 1 / span 2;
+    }
+
+    #testimonials-grid {
+        grid-template-columns: 1fr;
+        row-gap: 2.25rem;
+        padding: 0;
+        margin: 7rem 12rem;
+    }
+
+    #testimonials-grid h4 {
+        grid-column: 1;
+        margin-bottom: 3rem;
+    }
+
+    .clients {
+        margin-bottom: 2.5rem;
+    }
+
+    .clients img {
+        margin-bottom: 2rem;
+    }
+
+    .clients p:first-of-type {
+        margin-bottom: 2rem;
+    }
+    /* END #testimonials */
+
+    #four-images-grid {
+        grid-column: 1 / span 2;
+        grid-template-columns: repeat(4, 1fr);
+    }
+    /* END MAIN GRID: Desktop viewport */
+}
+/* END 768 MIN-WIDTH VIEWPORT */
+
+
+/* || 820 MIN-WIDTH VIEWPORT */
+@media screen and (min-width: 821px) {
+    .header-nav-links li:first-of-type {
+        padding-top: 2.5rem;
+    }
+
+    .header-nav-links li:last-of-type {
+        padding-bottom: 2.5rem;
+    }
+
+    #testimonials-grid {
+        margin: 7rem 15rem;
+    }
+}
+/* END 820 MIN-WIDTH VIEWPORT */
+
+
+/* || 1024 MIN-WIDTH VIEWPORT */
+@media screen and (min-width: 1024px) {
+    /* || GENERAL SITEWIDE STYLES: 1024 min-width viewport */
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    h3 {
+        font-size: 1.8rem;
+    }
+
+    p {
+        font-size: 1.125rem;
+        line-height: 2rem;
+    }
+
+    /* || UTILITIES: : 1024 min-width viewport */
+    .logo-sunnyside {
+        width: 170px;
+    }
+
+    #hamburger-icon {
+        display: none;
+    }
+
+    /* || HEADER AND NAVIGATION: : 1024 min-width viewport */
+    #nav-desktop {
+        display: block;
+    }
+
+    #header-nav-triangle {
+        display: none;
+    }
+
+    .header-nav-links {
+        padding: 0;
+    }
+
+    .header-nav-links ul {
+        flex-direction: row;
+        justify-content: end;
+        background-color: transparent;
+        width: max-content;
+    }
+
+    .header-nav-links li {
+        padding: 0 1.5rem;
+    }
+
+    .header-nav-links li:first-of-type {
+        padding-top: 0;
+    }
+
+    .header-nav-links li:last-of-type {
+        padding-bottom: 0;
+        padding-right: 0;
+    }
+
+    .header-nav-links a:link,
+    .header-nav-links a:visited,
+    .header-nav-links a:hover,
+    .header-nav-links a:focus,
+    .header-nav-links a:active {
+        color: var(--white);
+    }
+
+    .header-nav-links .button {
+        width: 144px;
+    }
+
+    .header-nav-links a.button {
+        background-color: var(--white);
+        color: var(--very-dark-blue);
+    }
+
+    .header-nav-links a.button:hover {
+        background-color: var(--white-alpha-25);
+        color: var(--white);
+    }
+    /* END HEADER AND NAVIGATION: : 1024 min-width viewport */
+
+    /* || MAIN GRID: 1024 min-width viewport */
+    .learn-more-content {
+        text-align: left;
+        width: 62%;
+        padding: 0;
+    }
+
+    .learn-more-content h2 {
+        margin-bottom: 1.75rem;
+    }
+
+    .learn-more-content p {
+        margin-bottom: 2.5rem;
+    }
+
+    #text-transform .learn-more-content {
+        margin-right: 0;
+        margin-left: 22%;
+    }
+
+    #text-stand-out .learn-more-content {
+        margin-left: 0;
+        margin-right: 22%;
+    }
+
+    .skills-content {
+        top: 58%;
+        width: 70%;
+        padding: 0;
+    }
+
+    .skills-content p {
+        font-size: 1.063rem;
+        line-height: 1.75rem;
+    }
+
+    /* #testimonials: */
+    #testimonials-grid {
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 0;
+        column-gap: 2.25rem;
+        margin: 9rem 10rem;
+    }
+
+    #testimonials-grid h4 {
+        grid-column: 1 / span 3;
+        margin-bottom: 6rem;
+    }
+
+    .clients {
+        margin-bottom: 0;
+    }
+
+    .clients img {
+        margin-bottom: 3.25rem;
+    }
+
+    .clients p:first-of-type {
+        margin-bottom: 4rem;
+    }
+    /* END #testimonials */
+    /* END MAIN GRID: 1024 min-width viewport */
+}
+/* END 1024 MIN-WIDTH VIEWPORT */
+
+
+/* || 1165 MIN-WIDTH VIEWPORT */
+@media screen and (min-width: 1165px) {
+    .skills-content {
+        top: 62%;
+        width: 60%;
+    }
+}
+
+
+/* || 1300 MIN-WIDTH VIEWPORT */
+@media screen and (min-width: 1300px) {
+    .skills-content {
+        top: 66%;
+        width: 60%;
+    }
+}
+
+
+/* || 1140 MIN-WIDTH VIEWPORT */
+@media screen and (min-width: 1440px) {
+    .skills-content {
+        top: 66%;
+        width: 50%;
+    }
+
+    .skills-content h3 {
+        margin-bottom: 1.5rem;
+    }
+}
+
+
+/* || 280 MAX-WIDTH VIEWPORT (Galaxy Fold) */
+@media screen and (max-width: 280px) {
+    h1 {
+        font-size: calc(1rem + 4vw);
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    #header-logo-nav {
+        padding: 1.85rem 1.25rem 0;
+    }
+
+    .skills-content {
+        top: 57%;
+    }
+
+    .skills-content h3 {
+        margin-bottom: 1rem;
+    }
+
+    .skills-content p {
+        line-height: 1.5rem;
+    }
+
+    #footer-content nav li {
+        margin: 0 1rem;
+    }
+
+    #attribution {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        column-gap: 0;
+    }
+
+    #attribution p {
+        line-height: 1rem;
+    }
+}
+/* END 280 MAX-WIDTH VIEWPORT (Galaxy Fold) */
