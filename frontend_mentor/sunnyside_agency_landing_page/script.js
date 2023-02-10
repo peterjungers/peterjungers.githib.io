@@ -9,18 +9,18 @@ Exercise: Sunnyside agency landing page
 window.addEventListener("DOMContentLoaded", () => {
     const hamburgerIcon = document.querySelector("#hamburger-icon");
     const hamburgerImg = document.querySelector("#hamburger-icon img");
-    const navLinks = document.querySelector("header #nav-mobile");
+    const navMobile = document.querySelector("header #nav-mobile");
 
     function toggleNavMenu() {
         hamburgerIcon.addEventListener("click", () => {
-            navLinks.classList.toggle("active");
+            navMobile.classList.toggle("active");
             toggleHamburgerIcon();
             closeNavMenuOnResize();
         });
     }
 
     function toggleHamburgerIcon() {
-        if (navLinks.classList.contains("active")) {
+        if (navMobile.classList.contains("active")) {
             hamburgerImg.src = "images/icon-hamburger-alpha-50.svg";
         } else {
             hamburgerImg.src = "images/icon-hamburger.svg";
@@ -29,9 +29,10 @@ window.addEventListener("DOMContentLoaded", () => {
 
     function closeNavMenuOnResize() {
         window.addEventListener("resize", () => {
-            if (navLinks.classList.contains("active")) {
-                navLinks.classList.toggle("active");
+            if (navMobile.classList.contains("active")) {
+                navMobile.classList.toggle("active");
             }
+            toggleHamburgerIcon();
         });
     }
 
