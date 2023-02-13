@@ -31,6 +31,9 @@ html, body, header, main, footer, section, div, h1, h2, h3, p, a, img, ul, li, b
 body {
     background-color: var(--off-white);
     font-family: Inter, Arial, sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: none;
+    -ms-text-size-adjust: 100%;
 }
 
 header {
