@@ -45,6 +45,10 @@ html, body, header, main, footer, section, div, h1, h2, h3, h4, p, a, img, ul, l
 body {
     background-color: var(--white);
     font-family: Barlow, sans-serif;
+    /* So font-size doesn't increase when mobile switches to landscape: */
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: none;
+    -ms-text-size-adjust: 100%;
 }
 
 h1, h2, h3, h4 {
