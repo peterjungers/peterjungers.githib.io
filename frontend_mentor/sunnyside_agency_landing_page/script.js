@@ -20,9 +20,9 @@ window.addEventListener("DOMContentLoaded", () => {
             toggleHamburgerIcon();
             closeNavMenuOnResize();
             if (navMobile.classList.contains("active")) {
-                body.addEventListener("click", bodyClick);
+                body.addEventListener("click", navCloseOnBodyClick);
             } else {
-                body.removeEventListener("click", bodyClick);
+                body.removeEventListener("click", navCloseOnBodyClick);
             }
         });
     }
@@ -41,17 +41,17 @@ window.addEventListener("DOMContentLoaded", () => {
                 navMobile.classList.toggle("active");
             }
             toggleHamburgerIcon();
-            body.removeEventListener("click", bodyClick);
+            body.removeEventListener("click", navCloseOnBodyClick);
         });
     }
 
-    function bodyClick(event) {
+    function navCloseOnBodyClick(event) {
         if (!navMobileMenu.contains(event.target)) {
             if (navMobile.classList.contains("active")) {
                 navMobile.classList.toggle("active");
             }
             toggleHamburgerIcon();
-            body.removeEventListener("click", bodyClick);
+            body.removeEventListener("click", navCloseOnBodyClick);
         }
     }
 
