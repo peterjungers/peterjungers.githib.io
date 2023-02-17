@@ -10,12 +10,20 @@ window.addEventListener("DOMContentLoaded", () => {
     const hamburgerIcon = document.querySelector("#hamburger-icon");
     const hamburgerImg = document.querySelector("#hamburger-icon img");
     const navMobile = document.querySelector("header #nav-mobile");
+    const body = document.querySelector("body");
+    const navMobileMenu = document.querySelector("header #nav-mobile ul");
 
     function toggleNavMenu() {
-        hamburgerIcon.addEventListener("click", () => {
+        hamburgerIcon.addEventListener("click", (event) => {
+            event.stopPropagation();
             navMobile.classList.toggle("active");
             toggleHamburgerIcon();
             closeNavMenuOnResize();
+            if (navMobile.classList.contains("active")) {
+                body.addEventListener("click", bodyClick);
+            } else {
+                body.removeEventListener("click", bodyClick);
+            }
         });
     }
 
@@ -33,7 +41,18 @@ window.addEventListener("DOMContentLoaded", () => {
                 navMobile.classList.toggle("active");
             }
             toggleHamburgerIcon();
+            body.removeEventListener("click", bodyClick);
         });
+    }
+
+    function bodyClick(event) {
+        if (!navMobileMenu.contains(event.target)) {
+            if (navMobile.classList.contains("active")) {
+                navMobile.classList.toggle("active");
+            }
+            toggleHamburgerIcon();
+            body.removeEventListener("click", bodyClick);
+        }
     }
 
     return toggleNavMenu();
