@@ -1,5 +1,5 @@
 # Peter Jungers  
-This repository contains static webpages which I link to from my homepage: https://peterjungers.github.io
+This repository contains static webpages which I link to from my homepage: [link](https://peterjungers.github.io){:target="_blank"}
 
 It also serves as a general repository for web-related things as needed.
 
