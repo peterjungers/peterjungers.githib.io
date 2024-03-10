@@ -4,11 +4,68 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Peter Jungers</title>
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
           crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-<h1>Hello, world!</h1>
+<body class="bg-dark">
+    <div class="bg-main vh-100">
+        <header class="sticky-top shadow mb-2">
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container py-2">
+                    <!-- Brand -->
+                    <a class="navbar-brand" href="index.html">Peter Jungers</a>
+                    <!-- Hamburger button -->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <!-- Menu items -->
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Data
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-dark">
+                                    <li><a class="dropdown-item" href="#">DFDRL website</a></li>
+                                    <li><a class="dropdown-item" href="#">Nirvana database</a></li>
+                                    <li><a class="dropdown-item" href="#">SQL code examples</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Projects
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-dark">
+                                    <li><a class="dropdown-item" href="#">Super Mario Bros. Quiz</a></li>
+                                    <li><a class="dropdown-item" href="#">Awesome New Thing</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Technical writing</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main class="container text-light pt-4">
+            <h4 class="pb-2">Information and technology</h4>
+            <p class="lh-lg">
+                After nearly twenty years of working in education, I am making the transition to the field of computer technology. My primary interest is the structuring of information. I aim for a simple, logical, user-friendly presentation for works that I create, with both the end-user and code maintenance in mind. One of the most helpful ideas I've learned in my time in education is the idea of the "prepared environment": the initial configuration and maintenance of a physical space as an ordered, meaningful space, sets students and staff up for success. By extension, visualizations of data, layouts and designs of software or websites, and the presentations of technical documents, can be constructed to evoke for end-users and developers alike an intuitive sense of purpose, order, and peace of mind.
+            </p>
+        </main>
+
+
+    </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 </body>
