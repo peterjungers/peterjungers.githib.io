@@ -5,12 +5,20 @@ Date created: March 10, 2024
 */
 
 
+.container {
+    max-width: 800px;
+}
+
 .bg-main {
     background: #2e3238;
 }
 
-.container {
-    max-width: 800px;
+.bg-card-header-1 {
+    background: #066679;
+}
+
+.bg-card-header-2 {
+    background: #043d49;
 }
 
 /*292c31*/

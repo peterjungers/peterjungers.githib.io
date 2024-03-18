@@ -82,17 +82,18 @@
             </div>
 
             <!-- Horizontal rule -->
-            <div class="border-secondary pb-1 mb-4">
+            <div class="border-secondary mb-5">
                 <hr>
             </div>
 
             <!-- Technical skills -->
-            <div class="container mb-4">
+            <div class="container mb-5">
                 <h5 class="mb-4">Technical skills</h5>
                 <div class="row">
+                    <!-- SQL and database design -->
                     <div class="col-sm-6 pb-1 mb-4">
                         <div class="card border-secondary h-100 text-bg-dark">
-                            <div class="card-header border-secondary">SQL and database design</div>
+                            <div class="card-header bg-card-header-1 border-secondary">SQL and database design</div>
                             <div class="card-body">
                                 <ul class="card-text lh-base px-3">
                                     <li class="mb-2">Oracle PL/SQL, Microsoft T-SQL, SQLite, MySQL</li>
@@ -103,9 +104,10 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Python -->
                     <div class="col-sm-6 pb-1 mb-4">
                         <div class="card border-secondary h-100 text-bg-dark">
-                            <div class="card-header border-secondary">Python</div>
+                            <div class="card-header bg-card-header-1 border-secondary">Python</div>
                             <div class="card-body">
                                 <ul class="card-text lh-base px-3">
                                     <li class="mb-2">Flask, SQLAlchemy, Jinja2</li>
@@ -118,9 +120,10 @@
                     </div>
                 </div>
                 <div class="row">
+                    <!-- Web development -->
                     <div class="col-sm-6 pb-1 mb-4">
                         <div class="card border-secondary h-100 text-bg-dark">
-                            <div class="card-header border-secondary">Web development</div>
+                            <div class="card-header bg-card-header-1 border-secondary">Web development</div>
                             <div class="card-body">
                                 <ul class="card-text lh-base px-3">
                                     <li class="mb-2">HTML, CSS, JavaScript</li>
@@ -131,9 +134,10 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Additional technical skills -->
                     <div class="col-sm-6 pb-1 mb-4">
                         <div class="card border-secondary h-100 text-bg-dark">
-                            <div class="card-header border-secondary">Additional technical skills</div>
+                            <div class="card-header bg-card-header-1 border-secondary">Additional technical skills</div>
                             <div class="card-body">
                                 <ul class="card-text lh-base px-3">
                                     <li class="mb-2">Git and GitHub</li>
@@ -146,20 +150,17 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col pb-1 mb-4">
-                        <div class="card border-secondary h-100 text-bg-dark">
-                            <div class="card-header border-secondary">Additional software</div>
-                            <div class="card-body">
-                                <ul class="card-text lh-base px-3">
-                                    <li class="mb-2">Microsoft Office, especially Word, Excel, PowerPoint, Access, Visio</li>
-                                    <li class="mb-2">Google Workspace, especially Docs, Sheets, Drive, Gmail</li>
-                                    <li class="mb-2">Adobe Creative Suite, especially InDesign, Illustrator, Photoshop</li>
-                                    <li class="mb-2">Some experience with GIMP</li>
-                                    <li class="mb-2">Currently learning Tableau</li>
-                                </ul>
-                            </div>
-                        </div>
+                <!-- Additional software -->
+                <div class="card border-secondary h-100 text-bg-dark">
+                    <div class="card-header bg-card-header-1 border-secondary">Additional software</div>
+                    <div class="card-body">
+                        <ul class="card-text lh-base px-3">
+                            <li class="mb-2">Microsoft Office, especially Word, Excel, PowerPoint, Access, Visio</li>
+                            <li class="mb-2">Google Workspace, especially Docs, Sheets, Drive, Gmail</li>
+                            <li class="mb-2">Adobe Creative Suite, especially InDesign, Illustrator, Photoshop</li>
+                            <li class="mb-2">Some experience with GIMP</li>
+                            <li class="mb-2">Currently learning Tableau</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -172,27 +173,49 @@
             <!-- Education -->
             <div class="container mb-4">
                 <h5 class="mb-4">Education</h5>
-                <div class="row">
-                    <div class="col pb-1 mb-4">
-                        <div class="card border-secondary h-100 text-bg-dark">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-md-auto card-header border-secondary">Certificate</div>
+                <!-- Certificate: Database Design and SQL -->
+                <div class="pb-1 mb-4">
+                    <div class="card border-secondary h-100 text-bg-dark">
+                        <div class="container">
+                            <div class="row bg-card-header-2 rounded-top-1">
+                                <div class="col-md-auto card-header border-secondary">Certificate</div>
 
-                                    <!-- Need to hide/show these two divs at breakpoint in order to get vertical borders to look right -->
-                                    <!-- No vertical borders for md display and smaller -->
-                                    <div class="d-md-none col-md-auto card-header border-secondary">Database Design and SQL</div>
-                                    <div class="d-md-none col-md-auto card-header border-secondary">Portland Community College</div>
-                                    <!-- Vertical borders for md and larger display -->
-                                    <div class="d-none d-md-block col-md-auto card-header border-start border-end border-secondary">Database Design and SQL</div>
-                                    <div class="d-none d-md-block col-md-auto card-header border-end border-secondary">Portland Community College</div>
+                                <!-- Need to hide/show these two divs at breakpoint in order to get vertical borders to look right -->
+                                <!-- No vertical borders for md display and smaller -->
+                                <div class="d-md-none col-md-auto card-header border-secondary">Database Design and SQL</div>
+                                <div class="d-md-none col-md-auto card-header border-secondary">Portland Community College</div>
+                                <!-- Vertical borders for md and larger display -->
+                                <div class="d-none d-md-block col-md-auto card-header border-start border-end border-secondary">Database Design and SQL</div>
+                                <div class="d-none d-md-block col-md-auto card-header border-end border-secondary">Portland Community College</div>
 
-                                    <div class="col card-header border-secondary">GPA: 4.0</div>
-                                </div>
+                                <div class="col card-header border-secondary">GPA: 4.0</div>
                             </div>
-                            <div class="card-body">
-                                <p class="mb-2 lh-base">Included courses in relational database design and introductory and advanced SQL. Learned both Microsoft and Oracle databases.</p>
+                        </div>
+                        <div class="card-body">
+                            <p class="mb-2 lh-base">Included courses in relational database design and introductory and advanced SQL. Learned both Microsoft and Oracle databases.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Certificate: Computer Information Systems -->
+                <div class="pb-1 mb-4">
+                    <div class="card border-secondary h-100 text-bg-dark">
+                        <div class="container">
+                            <div class="row bg-card-header-2 rounded-top-1">
+                                <div class="col-md-auto card-header border-secondary">Certificate</div>
+
+                                <!-- Need to hide/show these two divs at breakpoint in order to get vertical borders to look right -->
+                                <!-- No vertical borders for md display and smaller -->
+                                <div class="d-md-none col-md-auto card-header border-secondary">Computer Information Systems</div>
+                                <div class="d-md-none col-md-auto card-header border-secondary">Portland Community College</div>
+                                <!-- Vertical borders for md and larger display -->
+                                <div class="d-none d-md-block col-md-auto card-header border-start border-end border-secondary">Computer Information Systems</div>
+                                <div class="d-none d-md-block col-md-auto card-header border-end border-secondary">Portland Community College</div>
+
+                                <div class="col card-header border-secondary">GPA: 4.0</div>
                             </div>
+                        </div>
+                        <div class="card-body">
+                            <p class="mb-2 lh-base">Included courses in programming logic, Python I and II, HTML and CSS, Javascript I, Unix/Linux command line, and data communication concepts.</p>
                         </div>
                     </div>
                 </div>
