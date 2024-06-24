@@ -22,5 +22,19 @@ Date created: March 10, 2024
 }
 
 
+/*
+Code embed styles
+Thanks to: https://codersblock.com/blog/customizing-github-gists/
+*/
 
+body .gist .gist-data {
+  background-color: #cdcdcd;
+}
 
+body .gist .highlight {
+  background-color: transparent;
+}
+
+body .gist .gist-meta {
+  display: none;
+}
