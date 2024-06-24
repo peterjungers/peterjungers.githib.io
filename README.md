@@ -1,8 +1,5 @@
 # Peter Jungers  
-This repository contains static webpages which I link to from my homepage: [peterjungers.github.io](https://peterjungers.github.io)
+## Portfolio
+SQL, Python, data visualization, web development, technical writing
 
-
-It also serves as a general repository for web-related things as needed.
-
-Peter Jungers  
-January 2023
+[peterjungers.github.io](https://peterjungers.github.io)
