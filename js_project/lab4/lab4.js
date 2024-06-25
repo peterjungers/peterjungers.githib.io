@@ -6,13 +6,6 @@ Assignment: Lab 4
 */
 
 
-/*
-I wanted to create a closure for "colorArray" below so that I didn't
-have to simply make it a global variable, similar to how a counter can
-be created with a closure, but I think doing that is beyond me at this
-point. If you have ideas or resources as to how I can do that (or even
-if it is a best practice to do that), please let me know, thanks :)
- */
 let colorArray = [];
 function mixColors(colorId) {
 
