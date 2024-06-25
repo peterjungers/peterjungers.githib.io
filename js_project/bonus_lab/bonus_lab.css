@@ -1,0 +1,73 @@
+/*
+Name: Peter Jungers
+Date: 12/1/22
+Course: Intro to JS
+Assignment: Bonus Lab
+*/
+
+
+/* CSS reset */
+body, header, main, div, h2, h3, ul, li, section, table, th, tr, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eee;
+}
+
+header {
+    background-color: #f5af72;
+    padding: 1em 0 0 5em;
+    margin-bottom: 7%;
+}
+
+header h2 {
+    padding: .5em 0;
+}
+
+header ul {
+    list-style-type: none;
+    padding-bottom: 2em;
+}
+
+header li {
+    padding: 0 0 .25em 0;
+}
+
+/* Table rules */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: .5em;
+}
+
+th {
+    text-align: left;
+    background-color: #aaa;
+}
+
+tr:nth-child(even) {
+    background-color: #ddd;
+}
+
+tr:nth-child(odd) {
+    background-color: #ccc;
+}
+/* End table rules */
+
+#container {
+    max-width: 900px;
+    margin: 0 auto 10%;
+}
+
+#intro {
+    width: 70%;
+    margin-bottom: 45px;
+    padding: 0 5em;
+}

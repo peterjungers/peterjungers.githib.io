@@ -1,0 +1,83 @@
+/* CSS reset */
+body, header, nav, main, div, h2, h3, ul, li, dl, dd, section {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eee;
+}
+
+header {
+    background-color: #ffe65d;
+    padding: 1em 0 0 5em;
+    margin-bottom: 7%;
+}
+
+header h2 {
+    padding: .5em 0;
+}
+
+header ul {
+    list-style-type: none;
+    padding-bottom: 2em;
+}
+
+header li {
+    padding: 0 0 .25em 0;
+}
+
+nav {
+    padding: 1em 0 0 5em;
+    margin-bottom: 7%;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+    /*font-weight: bold;*/
+}
+
+a:hover {
+    color: #777;
+}
+
+#container {
+    max-width: 900px;
+    margin: 0 auto 10%;
+    }
+
+#intro {
+    width: 70%;
+    margin-bottom: 45px;
+    padding: 0 5em;
+}
+
+#labs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 40px;
+}
+
+#labs dt {
+    font-weight: bold;
+    margin-bottom: 7px;
+}
+
+#labs dd {
+    padding-left: 1.5em;
+}
+
+#labs dd:nth-of-type(odd) {
+    margin-bottom: 5px;
+}
+
+#labs dd:nth-of-type(even) {
+    margin-bottom: 30px;
+}

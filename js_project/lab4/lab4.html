@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!--
+Name: Peter Jungers
+Date: 10/18/22
+Course: Intro to JS
+Assignment: Lab 4
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Refactoring</title>
+  <link rel="stylesheet" href="lab4.css">
+</head>
+<body><!-- Body -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- -->
+
+  <div id="container">
+
+    <header id="changeColor"><!-- Header -=-=-=-=-=-=-=-=-=-=-=-=-= -->
+      <h2>JavaScript refactoring</h2>
+      <ul>
+        <li>Peter Jungers</li>
+        <li>10/18/22</li>
+        <li>Intro to JS — Lab 4</li>
+      </ul>
+    </header>
+
+    <main><!-- Main -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- -->
+      <section class="content">
+        <h3>HTML color blending</h3>
+        <p>The original 16 colors to be referenced by HTML-defined names are shown below. Click on two colors to mix them.</p>
+        <button onclick="reset()">Reset</button>
+      </section>
+
+      <section id="squares" class="grid">
+        <div id="aqua" onclick="mixColors(id)"></div>
+        <div id="black" onclick="mixColors(id)"></div>
+        <div id="blue" onclick="mixColors(id)"></div>
+        <div id="fuchsia" onclick="mixColors(id)"></div>
+        <div id="gray" onclick="mixColors(id)"></div>
+        <div id="green" onclick="mixColors(id)"></div>
+        <div id="lime" onclick="mixColors(id)"></div>
+        <div id="maroon" onclick="mixColors(id)"></div>
+        <div id="navy" onclick="mixColors(id)"></div>
+        <div id="olive" onclick="mixColors(id)"></div>
+        <div id="purple" onclick="mixColors(id)"></div>
+        <div id="red" onclick="mixColors(id)"></div>
+        <div id="silver" onclick="mixColors(id)"></div>
+        <div id="teal" onclick="mixColors(id)"></div>
+        <div id="white" onclick="mixColors(id)"></div>
+        <div id="yellow" onclick="mixColors(id)"></div>
+      </section>
+
+      <section id="messageSection" class="content">
+        <p><span id="color1" >Color</span> + <span id="color2" >Color</span> = <span id="mixedColorHex" >?</span></p>
+        <p id="comment" class="italic"></p>
+      </section>
+
+    </main>
+
+    <footer><!-- Footer -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- -->
+      <p>Resource: <a href="https://www.w3schools.com/colors/colors_mixer.asp" target="_blank">W3Schools: HTML Color Mixer</a></p>
+    </footer>
+
+  </div>
+
+  <script src="lab4.js"></script>
+
+</body>
+</html>

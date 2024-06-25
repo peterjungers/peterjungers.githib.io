@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<!--
+Name: Peter Jungers
+Date: 10/14/22
+Course: Intro to JS
+Assignment: Lab 3
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript branching and loops</title>
+  <style>/* Style rules -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= */
+    /* CSS reset */
+    body, header, main, footer, section, div, h2, h3, ul, li {
+      margin: 0;
+      padding: 0;
+      border: 0;
+    }
+
+    body {
+      color: #000;
+      font-family: Arial, sans-serif;
+      background-color: #eee;
+    }
+
+    header {
+      background-color: #dedede;
+      padding: 1em 0 0 5em;
+      margin-bottom: 7%;
+    }
+
+    header h2 {
+      padding: .5em 0;
+    }
+
+    header ul {
+      list-style-type: none;
+      padding-bottom: 2em;
+    }
+
+    header li {
+      padding: 0 0 .25em 0;
+    }
+
+    #content {
+      height: 230px;
+      width: 70%;
+      padding: 0 5em;
+    }
+
+    #container {
+      max-width: 900px;
+      margin: 0 auto 10%;
+    }
+
+    #colorStatus {
+      font-style: italic;
+    }
+
+    footer {
+      padding: 2em 5em 0;
+    }
+
+    footer p {
+      font-size: .75em;
+    }
+
+    footer a {
+      color: #888;
+      text-decoration: none;
+    }
+
+  footer a:hover {
+    color: #aaa;
+  }
+
+  </style>
+  <script>// Scripts -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+    let counter = 1;
+    let colorTally = [];
+
+    function checkColorStatus() {
+      const originalColors = [
+        "white",
+        "silver",
+        "gray",
+        "black",
+        "red",
+        "maroon",
+        "yellow",
+        "olive",
+        "lime",
+        "green",
+        "aqua",
+        "teal",
+        "blue",
+        "navy",
+        "fuchsia",
+        "purple"
+      ];
+      let checkColor = document.getElementById("colorText").value.toLowerCase();
+      let messageStatus = document.getElementById("colorStatus");
+      let headerDiv = document.getElementById("changeColor");
+
+      headerDiv.style.color = "#000";
+      if (originalColors.includes(checkColor)) {
+        messageStatus.innerText = "Yep! That was an original color.";
+        if (checkColor === "black" ||
+            checkColor === "maroon" ||
+            checkColor === "blue" ||
+            checkColor === "navy" ||
+            checkColor === "purple") {
+          headerDiv.style.color = "#eee";
+        }
+        headerDiv.style.backgroundColor = checkColor;
+        keepTally(checkColor);
+      } else {
+        headerDiv.style.backgroundColor = "#dedede";
+        messageStatus.innerText = "Sorry, that was not an original color.";
+      }
+    }
+
+    function keepTally(checkColor) {
+      let messageStatus = document.getElementById("colorStatus");
+      let messageColors = document.getElementById("correctColors");
+
+      if (!(colorTally.includes(checkColor))) {
+        colorTally.push(checkColor);
+        if (colorTally.length === 16) {
+          messageStatus.innerText = "Congratulations! You know all 16 original colors!";
+        }
+      }
+      let text = colorTally.join(", ");
+      for (counter; counter === colorTally.length; counter += 1) {
+        messageColors.innerText = (`Original colors (${counter}/16): ${text}`);
+      }
+    }
+  </script>
+</head>
+<body><!-- Body -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- -->
+
+  <div id="container">
+
+    <header id="changeColor"><!-- Header -=-=-=-=-=-=-=-=-=-=-=-=-= -->
+      <h2>JavaScript branching and loops</h2>
+      <ul>
+        <li>Peter Jungers</li>
+        <li>10/14/22</li>
+        <li>Intro to JS — Lab 3</li>
+      </ul>
+    </header>
+
+    <main class="grid"><!-- Main -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+      <section id="content">
+        <h3>HTML color names</h3>
+        <p>HTML 4.01, ratified in 1999, defined color names for 16 colors. These names could, and still can be, used in lieu of their corresponding hexadecimal numbers.</p>
+        <p>Do you know what these sixteen colors were? Type a color name into the box below to see if it was an original named color.</p>
+        <label>Color:</label>
+        <input type="text" id="colorText">
+        <input type="submit" id="submit" onclick="checkColorStatus()" value="Submit">
+        <p id="colorStatus"><p>
+        <p id="correctColors"></p>
+      </section>
+    </main>
+
+    <footer><!-- Footer -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- -->
+      <p>Answers: <a href="https://en.wikipedia.org/wiki/Web_colors#HTML_color_names" target="_blank">Wikipedia: Web colors</a></p>
+    </footer>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+/*
+Name: Peter Jungers
+Date: 11/2/22
+Course: Intro to JS
+Assignment: Lab 5
+*/
+
+
+/* CSS reset */
+body, header, main, footer, section, div, h2, h3, h4, p, ul, li, input {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    color: #000;
+    font-family: Arial, sans-serif;
+    background-color: #eee;
+}
+
+ul {
+    list-style-type: none;
+}
+
+#container {
+    max-width: 900px;
+    margin: 0 auto 10%;
+}
+
+header {
+    background-color: #dedede;
+    padding: 1em 0 0 5em;
+    margin-bottom: 7%;
+}
+
+header h2 {
+    padding: .5em 0;
+}
+
+header ul {
+    padding-bottom: 2em;
+}
+
+header li {
+    padding-bottom: .25em;
+}
+
+main li {
+    padding-bottom: .75em;
+}
+
+input[type="text"] {
+    height: 1.5em;
+    padding-left: .5em;
+}
+
+label {
+    padding-left: .5em;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 60% auto;
+    column-gap: 20px;
+    row-gap: 20px;
+    padding-left: 5em;
+}
+
+#intro {
+    grid-row: 1;
+    margin-bottom: 40px;
+}
+
+.quiz h3 {
+    margin-bottom: 1.5em;
+}
+
+.quiz h4 {
+    margin-bottom: 1em;
+}
+
+.quiz-section {
+    margin-bottom: 70px;
+}
+
+.quiz-question {
+    margin-bottom: 24px;
+}
+
+#answers {
+    grid-row: 1 / span 2;
+}
+
+#show-answers {
+    display: none;
+    position: sticky;
+    top: 200px;
+}
+
+#show-answers ul {
+    background-color: #dedede
+}
+
+#show-answers li {
+    padding: .5em 1em;
+}
+
+#show-answers li.indent {
+    padding-left: 2.1em;
+}
+
+.bold {
+    font-weight: bold;
+}
