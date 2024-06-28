@@ -101,18 +101,32 @@ Date: March–July 2024
                     Various members of my family (only two of whom are children) participate in the Damon & Felix Die-Cast Racing League (DFDRL), where we construct tracks, keep statistics, and race Hot Wheels and Matchbox vehicles in events we participate in via Zoom sessions. Each member, in addition to managing their own racing team, has certain responsibilities to the league—I act as statistician and record keeper.
                 </p>
                 <p class="pb-2 mb-4">
-                    The website presented here was built using Python's <a href="https://flask.palletsprojects.com/en/3.0.x/" class="link-light link-offset-1 link-underline-opacity-50 link-underline-opacity-100-hover" target="_blank">Flask</a> web application framework, which I first taught myself to use not long after my introductory Python course had ended. The database was built and queried using SQLAlchemy. I used <a href="https://getbootstrap.com" class="link-light link-offset-1 link-underline-opacity-50 link-underline-opacity-100-hover" target="_blank">Bootstrap</a> for CSS styling, along with some custom styles. The project was also a good exercise in JavaScript, especially on the "Vehicles" page. The aesthetics of the site were based on my original Google Sheets statistics pages. The site was deployed at <a href="https://www.pythonanywhere.com/" class="link-light link-offset-1 link-underline-opacity-50 link-underline-opacity-100-hover" target="_blank">PythonAnywhere</a>.
+                    The website presented here was built using Python's <a href="https://flask.palletsprojects.com/en/3.0.x/" class="link-light link-offset-1 link-underline-opacity-50 link-underline-opacity-100-hover" target="_blank">Flask</a> web application framework, which I first taught myself to use not long after my introductory Python course had ended. The database was built and queried using SQLAlchemy. I used <a href="https://getbootstrap.com" class="link-light link-offset-1 link-underline-opacity-50 link-underline-opacity-100-hover" target="_blank">Bootstrap</a> for CSS styling, along with some custom styles—the images below illustrate desktop and tablet viewports. The project was also a good exercise in JavaScript, especially on the "Vehicles" page. The aesthetics of the site were based on my original Google Sheets statistics pages. The site was deployed at <a href="https://www.pythonanywhere.com/" class="link-light link-offset-1 link-underline-opacity-50 link-underline-opacity-100-hover" target="_blank">PythonAnywhere</a>.
                 </p>
-                <div class="row pb-3 mb-4">
-                    <div class="col-auto">
+                <!-- Button links -->
+                <div class="row">
+                    <div class="col-auto mb-3 pb-4">
                         <a href="https://peterjungers.pythonanywhere.com/dfdrl" target="_blank" class="btn btn-info">DFDRL website</a>
                     </div>
-                    <div class="col-auto">
+                    <div class="col-auto pb-4">
                         <a href="https://github.com/peterjungers/dfdrl/tree/main" target="_blank" class="btn btn-info">DFDRL GitHub repository</a>
                     </div>
                 </div>
-                <p>
-                    My GitHub repository for the site is structured in a way typical to Flask. I used Flask Blueprints as a way to expand the site at a later date—eventually I may add login capabilities for team managers to help them track their team. To help with finding code, I link below not only to the overall project repository, but to specific code within the project. Special attention is given to my SQLALchemy code.
+                <!-- Images -->
+                <div class="row mb-2 pb-4">
+                    <div class="col-sm-7 pb-4 pb-md-0">
+                        <a href="https://peterjungers.pythonanywhere.com/dfdrl" target="_blank">
+                            <img src="assets/images/dfdrl/dfdrl_index.png" class="img-fluid" alt="DFDRL homepage, desktop viewport.">
+                        </a>
+                    </div>
+                    <div class="col-sm-5 pb-md-0">
+                        <a href="https://peterjungers.pythonanywhere.com/dfdrl/season/10" target="_blank">
+                            <img src="assets/images/dfdrl/dfdrl_seasons.png" class="img-fluid" style="max-height: 385px;" alt="DFDRL, 'Seasons' page, tablet viewport.">
+                        </a>
+                    </div>
+                </div>
+                <p class="">
+                    My GitHub repository for the site is structured in a way typical to Flask. I used Flask Blueprints as a way to expand the site at a later date—eventually I may add login capabilities for team managers to help them track their team. To help with finding code, I link above not only to the overall project repository, but below to specific code within the project. Special attention is given to my SQLALchemy code and database design.
                 </p>
             </div>
 
