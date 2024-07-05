@@ -177,21 +177,12 @@ Date: March–July 2024
                     <script src="https://gist.github.com/peterjungers/428ce147cd983316feb55c306d4ea44c.js"></script>
                 </div>
                 <!-- Drink results pie chart, new labels -->
-                <div class="mb-5">
+                <div class="mb-4">
                     <img src="assets/images/pandas_matplotlib/graphs/drink_ages_all.png" class="img-fluid" alt="Pie chart showing coffee drink preferences by age group, with altered labels.">
                 </div>
-            </div>
-
-            <!-- Horizontal rule -->
-            <div class="border-secondary mb-5">
-                <hr>
-            </div>
-
-            <!-- Favorite coffee drink using groupby() -->
-            <div class="container mb-5">
-                <h5 class="mb-4">Favorite coffee drink using <span class="font-monospace code-text">groupby()</span></h5>
+                <!-- groupby() -->
                 <p>
-                    I then wanted to see if drink preference changed based on age. To do this, I used the <span class="font-monospace code-text">groupby()</span> function to create groups of participants based on the age ranges used in the survey. I was then able to isolate the preferences of each age range.
+                    I then wanted to see if drink preference changed based on age. To do this, I used the pandas <span class="font-monospace code-text">groupby()</span> function to create groups of participants based on the age ranges used in the survey. I was then able to isolate the preferences of each age range.
                 </p>
                 <p class="mb-4">
                     I first graphed the <span class="font-monospace code-text">"25-34 years old"</span> group, then compared it to the <span class="font-monospace code-text">"55-64 years old"</span> group.
@@ -209,7 +200,7 @@ Date: March–July 2024
                     <img src="assets/images/pandas_matplotlib/graphs/drink_ages_55.png" class="img-fluid" alt="Pie chart showing coffee drink preferences for group '55-64 years old'.">
                 </div>
                 <p>
-                    The ordering of drink preference is identical for each of these age groups—it is, indeed, the same ordering found in the initial pie chart measuring preferences of all ages combined. The biggest difference between the two age groups charted is a not-insignificant increase in "Drip Coffee" preference for the older group. This can be compared to an increase in "Pourover" preference in the younger group.
+                    The ordering of drink preference is identical for each of these age groups—it is, indeed, the same ordering found in the initial pie chart measuring drink preferences of all ages combined. The biggest difference between the two age groups charted is a not-insignificant increase in "Drip Coffee" preference for the older group. This can be compared to an increase in "Pourover" preference in the younger group.
                 </p>
                 <p class="mb-4">
                    Below is the code used to chart the "55-64 years old" age group. It is similar to the code used in all three pie charts:
@@ -247,7 +238,7 @@ Date: March–July 2024
                     It was interesting to see that a higher percentage of the older age group drank three cups of coffee per day compared to both the younger age group and the entire group of participants. This is also true with four cups per day.
                 </p>
                 <p class="mb-4">
-                   My final graph shows the dollar amount spent per month by all participants. The code used to make the graph follows:
+                   My final graph shows the dollar amount spent per month by all participants. The code used to make the graph then follows:
                 </p>
                 <!-- Money spent per month results bar graph -->
                 <div class="mb-4">
