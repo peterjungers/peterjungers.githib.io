@@ -117,7 +117,7 @@ Date: March–July 2024
             <div class="container mb-5">
                 <h5 class="mb-4">Age of participants</h5>
                 <p>
-                    I first wanted to see the age distribution of everyone who had participated in the survey. Utilizing the <span class="font-monospace">"What is your age?"</span> column, I created the following DataFrame, as seen in my Notebook:
+                    I first wanted to see the age distribution of everyone who had participated in the survey. Utilizing the <span class="font-monospace code-text">"What is your age?"</span> column, I created the following DataFrame, as seen in my Notebook:
                 </p>
                 <!-- Age results image -->
                 <div class="row mb-4">
@@ -126,18 +126,35 @@ Date: March–July 2024
                     </div>
                 </div>
                 <p class="mb-4">
-                    ...
+                    Using the DataFrame, I then created a bar graph of the data:
                 </p>
-                <!-- Code embed -->
-                <div class="mb-4">
-                    <script src="https://gist.github.com/peterjungers/98c351bb9802dc954b4c0a2b9efdffcb.js"></script>
+                <!-- Age results graph unordered vert -->
+                <div class="row mb-4">
+                    <div class="col-auto pb-4 pb-md-0">
+                        <img src="assets/images/pandas_matplotlib/graphs/age_unordered.png" class="img-fluid" style="max-height: 385px;" alt="Bar graph showing distribution of participants' ages—unordered.">
+                    </div>
                 </div>
                 <p class="mb-4">
-                    The intended outcome was 88 rows, shown truncated below:
+                    The <span class="font-monospace code-text">value_counts()</span> function defaults to returning the data in descending order based on count. It was more intuitive to visualize the data in the order of younger ages to older ages, so I rewrote the DataFrame to grab data in the order that I wanted, which produced this graph:
                 </p>
+                <!-- Age results graph ordered vert -->
+                <div class="row mb-4">
+                    <div class="col-auto pb-4 pb-md-0">
+                        <img src="assets/images/pandas_matplotlib/graphs/age_ordered_vert.png" class="img-fluid" style="max-height: 385px;" alt="Bar graph showing distribution of participants' ages—unordered.">
+                    </div>
+                </div>
+                <p class="mb-4">
+                    Finally, I felt that a horizontal bar graph would be easier to read. I also simplified the age tick labels, rather than use the labels that are returned from the original survey. The final code I used can be seen below the graph:
+                </p>
+                <!-- Age results graph ordered horz -->
+                <div class="row mb-4">
+                    <div class="col-auto pb-4 pb-md-0">
+                        <img src="assets/images/pandas_matplotlib/graphs/age_ordered_horz.png" class="img-fluid" style="max-height: 385px;" alt="Bar graph showing distribution of participants' ages—unordered.">
+                    </div>
+                </div>
                 <!-- Code embed -->
                 <div class="mb-5">
-                    <script src="https://gist.github.com/peterjungers/cc66351441261895b0e9379272079691.js"></script>
+                    <script src="https://gist.github.com/peterjungers/b336f7b20c0f0b6df4c74f0193e556de.js"></script>
                 </div>
             </div>
 
