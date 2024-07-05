@@ -150,11 +150,10 @@ Date: March–July 2024
                 <p class="mb-4">
                     In Flask, I was then able to construct "models" using SQLAlchemy, which were used to create the database. Each class in the <a href="https://github.com/peterjungers/dfdrl/blob/main/dfdrl/models.py" class="link-light link-offset-1 link-underline-opacity-50 link-underline-opacity-100-hover" target="_blank">models.py</a> code at my GitHub repository serves to create a table. Below, as an example, is the code I wrote in order to construct the "Team" and "Vehicle" tables. The foreign key relationship between a vehicle and its team is evident in the use of the <span class="font-monospace code-text">relationship()</span> function:
                 </p>
-                <!-- Code embed -->
+                <!-- Code embed: models -->
                 <div class="mb-4">
                     <script src="https://gist.github.com/peterjungers/241222f0c30a1b53c3716da0a860a5ab.js"></script>
                 </div>
-                <!-- Models -->
                 <p class="mb-4">
                     The code for all the models used for the project can be found here:
                 </p>
@@ -166,7 +165,7 @@ Date: March–July 2024
                 <p class="pt-2 mb-4">
                     Finally, the "routes" within my Flask code contain queries to the database that fetch the data that I want to show in HTML tables. The query in the example below gets data that I need for the "Vehicles" page:
                 </p>
-                <!-- Code embed -->
+                <!-- Code embed: routes -->
                 <div class="mb-4">
                     <script src="https://gist.github.com/peterjungers/bf21237b8e2114912414ec53711605b1.js"></script>
                 </div>
@@ -174,7 +173,7 @@ Date: March–July 2024
                 <p class="mb-4">
                     By using Jinja2, a table is then programmatically constructed in HTML. Data is called with reference to the column names established in the Vehicles model, as shown in the "models" code above:
                 </p>
-                <!-- Code embed -->
+                <!-- Code embed: Jinja2 -->
                 <div class="mb-4">
                     <script src="https://gist.github.com/peterjungers/3ca4ba4fe0e6f2ee69f5478ed80c5a3c.js"></script>
                 </div>
@@ -182,11 +181,10 @@ Date: March–July 2024
                 <p class="mb-4">
                     The following code is one final example of SQLAlchemy used in my project. The DFDRL homepage contains multiple tables, each of which uses a different query. I separated these queries into separate functions, then called them from the homepage's routing function. One of these called functions is below. It contains a series of queries that fetch data that is used to populate the vehicle leaderboard at the homepage:
                 </p>
-                <!-- Code embed -->
+                <!-- Code embed: get_vehicle_leaderboard() -->
                 <div class="mb-4">
                     <script src="https://gist.github.com/peterjungers/abd754c39cce5f380ad1828ef8abc1d0.js"></script>
                 </div>
-                <!-- Routes -->
                 <p class="mb-4">
                     The code for all the routes used in the project can be found here:
                 </p>
@@ -201,7 +199,7 @@ Date: March–July 2024
                 <hr>
             </div>
 
-            <!-- Sunnyside agency -->
+            <!-- JavaScript -->
             <div class="container mb-5">
                 <h5 class="mb-4">JavaScript</h5>
                 <p>
@@ -210,11 +208,10 @@ Date: March–July 2024
                 <p class="pb-2 mb-4">
                     The code below is a function that shows or hides table rows based on text input supplied by the user. If a team is not selected in the "Select Team" drop box, then vehicles from all teams matching user input will be displayed. If the user selects a team in the drop box before entering a vehicle name, then only vehicles from that team will be displayed.
                 </p>
-                <!-- Code embed -->
+                <!-- Code embed: JavaScript -->
                 <div class="mb-4">
                     <script src="https://gist.github.com/peterjungers/e83332e8a9362d0b45172d125195358d.js"></script>
                 </div>
-                <!-- Routes -->
                 <p class="mb-4">
                     The function in the context of the entire script can be seen here:
                 </p>
