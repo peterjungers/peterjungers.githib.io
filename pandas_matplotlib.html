@@ -98,7 +98,7 @@ Date: March–July 2024
             <div class="container mb-5">
                 <h2 class="mb-3">Python: pandas and Matplotlib—Coffee survey</h2>
                 <p>
-                    As an exercise in using Python's pandas and Matplotlib libraries, I created the graphs below based on real-world data found at <a href="https://www.kaggle.com/datasets/sujaykapadnis/lets-do-some-coffee-tasting/data" class="link-light link-offset-1 link-underline-opacity-50 link-underline-opacity-100-hover" target="_blank">Kaggle</a>. The data is taken from a 2023 <a href="https://www.youtube.com/watch?v=U489K2t_Tgc" class="link-light link-offset-1 link-underline-opacity-50 link-underline-opacity-100-hover" target="_blank">live-streamed event</a> on YouTube that aimed to determine coffee preferences of Americans via real-time tastings and surveys.
+                    Python's pandas and Matplotlib libraries are used to read, manipulate, and visualize data. As an exercise in using these libraries, I created the graphs below based on real-world data found at <a href="https://www.kaggle.com/datasets/sujaykapadnis/lets-do-some-coffee-tasting/data" class="link-light link-offset-1 link-underline-opacity-50 link-underline-opacity-100-hover" target="_blank">Kaggle</a>. The data is taken from a 2023 <a href="https://www.youtube.com/watch?v=U489K2t_Tgc" class="link-light link-offset-1 link-underline-opacity-50 link-underline-opacity-100-hover" target="_blank">live-streamed event</a> on YouTube that aimed to determine coffee preferences of Americans via real-time tastings and surveys.
                 </p>
                 <p class="pb-2 mb-4">
                     The complete Jupyter Notebook in which I worked can be viewed at my GitHub repository. Specific code examples, process notes, and the graphs themselves, can be viewed below.
@@ -116,41 +116,33 @@ Date: March–July 2024
             <!-- Age of participants -->
             <div class="container mb-5">
                 <h5 class="mb-4">Age of participants</h5>
-                <p>
-                    I first wanted to see the age distribution of everyone who had participated in the survey. Utilizing the <span class="font-monospace code-text">"What is your age?"</span> column, I created the following DataFrame, as seen in my Notebook:
+                <p class="mb-4">
+                    I first wanted to see the age distribution of everyone who had participated in the survey. Utilizing the <span class="font-monospace code-text">"What is your age?"</span> column, I created the following pandas DataFrame, as seen in my Notebook:
                 </p>
                 <!-- Age results Notebook image -->
-                <div class="row mb-4">
-                    <div class="col-auto">
-                        <img src="assets/images/pandas_matplotlib/notebook/age_results.png" class="img-fluid" style="max-height: 385px;" alt="pandas DataFrame showing age distribution results.">
-                    </div>
+                <div class="mb-4">
+                    <img src="assets/images/pandas_matplotlib/notebook/age_results.png" class="img-fluid" style="max-height: 385px;" alt="pandas DataFrame showing age distribution results.">
                 </div>
                 <p class="mb-4">
-                    Using the DataFrame, I then created a bar graph of the data:
+                    Using the DataFrame, I then created a bar graph of the data using Matplotlib:
                 </p>
-                <!-- Age results graph unordered vert -->
-                <div class="row mb-4">
-                    <div class="col-auto">
-                        <img src="assets/images/pandas_matplotlib/graphs/age_unordered.png" class="img-fluid" alt="Bar graph showing distribution of participants' ages—unordered.">
-                    </div>
+                <!-- Age results bar graph unordered vert -->
+                <div class="mb-4">
+                    <img src="assets/images/pandas_matplotlib/graphs/age_unordered.png" class="img-fluid" alt="Bar graph showing distribution of participants' ages—unordered.">
                 </div>
                 <p class="mb-4">
                     The <span class="font-monospace code-text">value_counts()</span> function defaults to returning the data in descending order based on count. It was more intuitive to visualize the data in the order of younger ages to older ages, so I rewrote the DataFrame to grab data in the order that I wanted, which produced this graph:
                 </p>
-                <!-- Age results graph ordered vert -->
-                <div class="row mb-4">
-                    <div class="col-auto">
-                        <img src="assets/images/pandas_matplotlib/graphs/age_ordered_vert.png" class="img-fluid" alt="Bar graph showing distribution of participants' ages—unordered.">
-                    </div>
+                <!-- Age results bar graph ordered vert -->
+                <div class="mb-4">
+                    <img src="assets/images/pandas_matplotlib/graphs/age_ordered_vert.png" class="img-fluid" alt="Bar graph showing distribution of participants' ages—unordered.">
                 </div>
                 <p class="mb-4">
                     Finally, I felt that a horizontal bar graph would be easier to read. I also simplified the age tick labels, rather than use the labels that are returned from the original survey. The final code I used can be seen below the graph:
                 </p>
-                <!-- Age results graph ordered horz -->
-                <div class="row pb-2 mb-4">
-                    <div class="col-auto">
-                        <img src="assets/images/pandas_matplotlib/graphs/age_ordered_horz.png" class="img-fluid" alt="Bar graph showing distribution of participants' ages—unordered.">
-                    </div>
+                <!-- Age results bar graph ordered horz -->
+                <div class="pb-2 mb-4">
+                    <img src="assets/images/pandas_matplotlib/graphs/age_ordered_horz.png" class="img-fluid" alt="Bar graph showing distribution of participants' ages—unordered.">
                 </div>
                 <!-- Code embed -->
                 <div class="mb-5">
@@ -166,45 +158,104 @@ Date: March–July 2024
             <!-- Favorite coffee drink -->
             <div class="container mb-5">
                 <h5 class="mb-4">Favorite coffee drink</h5>
-                <p>
-                    My next graph was to be based on the favorite coffee drink of participants:
+                <p class="mb-4">
+                    My next graph was to be based on the favorite coffee drink of all participants:
                 </p>
                 <!-- Drink results, all ages, Notebook image -->
-                <div class="row pb-2 mb-4">
-                    <div class="col-auto">
-                        <img src="assets/images/pandas_matplotlib/notebook/drink_results.png" class="img-fluid" alt="pandas DataFrame showing age distribution results.">
-                    </div>
+                <div class="pb-2 mb-4">
+                    <img src="assets/images/pandas_matplotlib/notebook/drink_results.png" class="img-fluid" alt="pandas DataFrame showing age distribution results.">
                 </div>
-<!--                <p class="mb-4">-->
-<!--                    Using the DataFrame, I then created a bar graph of the data:-->
-<!--                </p>-->
-                <!-- Age results graph unordered vert -->
-                <div class="row mb-4">
-                    <div class="col-auto">
-                        <img src="assets/images/pandas_matplotlib/graphs/drink_ages_all_index_labels.png" class="img-fluid" alt="Bar graph showing distribution of participants' ages—unordered.">
-                    </div>
+                <!-- Drink results pie chart, original labels -->
+                <div class="mb-4">
+                    <img src="assets/images/pandas_matplotlib/graphs/drink_ages_all_index_labels.png" class="img-fluid" alt="Pie chart showing coffee drink preferences by age group.">
                 </div>
                 <p class="mb-4">
-                    The <span class="font-monospace code-text">value_counts()</span> function defaults to returning the data in descending order based on count. It was more intuitive to visualize the data in the order of younger ages to older ages, so I rewrote the DataFrame to grab data in the order that I wanted, which produced this graph:
+                    I again created new labels, altering "Regular drip coffee" and "Blended drink (e.g. Frappuccino)". This required making a new list using the survey question indexes that were used in the DataFrame:
                 </p>
-                <!-- Age results graph ordered vert -->
-                <div class="row mb-4">
-                    <div class="col-auto">
-                        <img src="assets/images/pandas_matplotlib/graphs/age_ordered_vert.png" class="img-fluid" alt="Bar graph showing distribution of participants' ages—unordered.">
-                    </div>
+                <!-- Code embed: pie labels -->
+                <div class="pb-2 mb-4">
+                    <script src="https://gist.github.com/peterjungers/428ce147cd983316feb55c306d4ea44c.js"></script>
                 </div>
-                <p class="mb-4">
-                    Finally, I felt that a horizontal bar graph would be easier to read. I also simplified the age tick labels, rather than use the labels that are returned from the original survey. The final code I used can be seen below the graph:
-                </p>
-                <!-- Age results graph ordered horz -->
-                <div class="row mb-4">
-                    <div class="col-auto">
-                        <img src="assets/images/pandas_matplotlib/graphs/age_ordered_horz.png" class="img-fluid" alt="Bar graph showing distribution of participants' ages—unordered.">
-                    </div>
-                </div>
-                <!-- Code embed -->
+                <!-- Drink results pie chart, new labels -->
                 <div class="mb-5">
-                    <script src="https://gist.github.com/peterjungers/b336f7b20c0f0b6df4c74f0193e556de.js"></script>
+                    <img src="assets/images/pandas_matplotlib/graphs/drink_ages_all.png" class="img-fluid" alt="Pie chart showing coffee drink preferences by age group, with altered labels.">
+                </div>
+            </div>
+
+            <!-- Horizontal rule -->
+            <div class="border-secondary mb-5">
+                <hr>
+            </div>
+
+            <!-- Favorite coffee drink using groupby() -->
+            <div class="container mb-5">
+                <h5 class="mb-4">Favorite coffee drink using <span class="font-monospace code-text">groupby()</span></h5>
+                <p>
+                    I then wanted to see if drink preference changed based on age. To do this, I used the <span class="font-monospace code-text">groupby()</span> function to create groups of participants based on the age ranges used in the survey. I was then able to isolate the preferences of each age range.
+                </p>
+                <p class="mb-4">
+                    I first graphed the <span class="font-monospace code-text">"25-34 years old"</span> group, then compared it to the <span class="font-monospace code-text">"55-64 years old"</span> group.
+                </p>
+                <!-- Drink results, "25-34 years old", Notebook image -->
+                <div class="pb-2 mb-4">
+                    <img src="assets/images/pandas_matplotlib/notebook/drink_groupby_results.png" class="img-fluid" alt="pandas DataFrame showing drink preference results for group '25-34 years old'.">
+                </div>
+                <!-- Drink results pie chart, "25-34 years old" -->
+                <div class="pb-2 mb-4">
+                    <img src="assets/images/pandas_matplotlib/graphs/drink_ages_25.png" class="img-fluid" alt="Pie chart showing coffee drink preferences for group '25-34 years old'.">
+                </div>
+                <!-- Drink results pie chart, "55-64 years old" -->
+                <div class="mb-4">
+                    <img src="assets/images/pandas_matplotlib/graphs/drink_ages_55.png" class="img-fluid" alt="Pie chart showing coffee drink preferences for group '55-64 years old'.">
+                </div>
+                <p>
+                    The ordering of drink preference is identical for each of these age groups—it is, indeed, the same ordering found in the initial pie chart measuring preferences of all ages combined. The biggest difference between the two age groups charted is a not-insignificant increase in "Drip Coffee" preference for the older group. This can be compared to an increase in "Pourover" preference in the younger group.
+                </p>
+                <p class="mb-4">
+                   Below is the code used to chart the "55-64 years old" age group. It is similar to the code used in all three pie charts:
+                </p>
+                <!-- Code embed: plot pie chart, ages "55-64 years old" -->
+                <div class="mb-5">
+                    <script src="https://gist.github.com/peterjungers/c3fd7bb43e650b60e88bccc9b9d67d00.js"></script>
+                </div>
+            </div>
+
+            <!-- Horizontal rule -->
+            <div class="border-secondary mb-5">
+                <hr>
+            </div>
+
+            <!-- Two final data examinations -->
+            <div class="container mb-5">
+                <h5 class="mb-4">Two final data examinations</h5>
+                <p class="mb-4">
+                    I was interested in knowing two final things that could be found in the data: how many cups of coffee participants drink per day, and how much they spend on coffee per month. I created the following pie charts, once again showing charts for "All Ages", "Ages 25–34", and "Ages 55–64":
+                </p>
+                <!-- Cups results pie chart, all ages -->
+                <div class="pb-2 mb-4">
+                    <img src="assets/images/pandas_matplotlib/graphs/cups_all.png" class="img-fluid" alt="Pie chart showing amount of cups drunk per day, all ages.">
+                </div>
+                <!-- Cups results pie chart, "25-34 years old" -->
+                <div class="pb-2 mb-4">
+                    <img src="assets/images/pandas_matplotlib/graphs/cups_25.png" class="img-fluid" alt="Pie chart showing amount of cups drunk per day, '25-34 years old'.">
+                </div>
+                <!-- Cups results pie chart, "55-64 years old" -->
+                <div class="mb-4">
+                    <img src="assets/images/pandas_matplotlib/graphs/cups_55.png" class="img-fluid" alt="Pie chart showing amount of cups drunk per day, '55-64 years old'.">
+                </div>
+                <p>
+                    It was interesting to see that a higher percentage of the older age group drank three cups of coffee per day compared to both the younger age group and the entire group of participants. This is also true with four cups per day.
+                </p>
+                <p class="mb-4">
+                   My final graph shows the dollar amount spent per month by all participants. The code used to make the graph follows:
+                </p>
+                <!-- Money spent per month results bar graph -->
+                <div class="mb-4">
+                    <img src="assets/images/pandas_matplotlib/graphs/money_ages_all.png" class="img-fluid" alt="Bar graph showing amount of money spect per month on coffee, all ages.">
+                </div>
+                <!-- Code embed: plot money graph, all ages -->
+                <div class="mb-5">
+                    <script src="https://gist.github.com/peterjungers/e15199160da803d09404901572803725.js"></script>
                 </div>
             </div>
 

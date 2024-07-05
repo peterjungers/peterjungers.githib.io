@@ -31,6 +31,10 @@ Code embed styles
 Thanks to: https://codersblock.com/blog/customizing-github-gists/
 */
 
+body .gist .gist-file {
+  margin: 0;
+}
+
 body .gist .gist-data {
   background-color: #cdcdcd;
 }
